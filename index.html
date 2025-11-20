@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clancy Crawford | Aerospace & Computational Mathematics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --deep-plum: #2B0A28;
+      --maroon: #B12A4A;
+      --coral: #FF7BAA;
+      --soft-rose: #FFADD5;
+      --bg-main: #0B0610;
+      --card-bg: #171222;
+      --text-main: #FFFFFF;
+      --text-muted: #D5CFE8;
+      --accent-pill: rgba(255, 173, 213, 0.12);
+      --accent-border: rgba(255, 173, 213, 0.7);
+      --link: #FFE08A;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1b1024 0, #06040a 55%, #000000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAVIGATION + HERO */
+
+    header {
+      background: linear-gradient(135deg, var(--deep-plum), var(--maroon), var(--coral), var(--soft-rose));
+      color: #ffffff;
+      padding-bottom: 40px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      padding: 18px 20px 8px 20px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    nav a {
+      color: #fff;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .hero-text {
+      flex: 1 1 340px;
+      min-width: 260px;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-sub span {
+      display: block;
+    }
+
+    .hero-meta {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 12px;
+    }
+
+    .hero-cta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(0,0,0,0.18);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn.primary {
+      background: #ffffff;
+      color: var(--maroon);
+      border-color: #ffffff;
+    }
+
+    .btn:hover {
+      filter: brightness(0.96);
+      text-decoration: none;
+    }
+
+    .hero-media {
+      flex: 0 0 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .headshot {
+      width: 210px;
+      height: 210px;
+      border-radius: 26px;
+      object-fit: cover;
+      box-shadow: 0 20px 55px rgba(0,0,0,0.5);
+      border: 3px solid rgba(255,255,255,0.8);
+    }
+
+    .qr-block {
+      background: rgba(10, 4, 18, 0.5);
+      padding: 10px 14px 12px 14px;
+      border-radius: 18px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.45);
+      backdrop-filter: blur(8px);
+    }
+
+    .qr-block img {
+      width: 110px;
+      height: 110px;
+      display: block;
+      margin: 0 auto 6px auto;
+      background: #ffffff;
+      padding: 4px;
+      border-radius: 16px;
+    }
+
+    .qr-block small {
+      font-size: 0.75rem;
+      color: #ffe7f4;
+    }
+
+
+    .qr-caption-top {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ffffffcc;
+      margin-bottom: 6px;
+      margin-top: -4px;
+     } 
+
+    /* MAIN LAYOUT */
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 20px 70px 20px;
+    }
+
+    section { margin-bottom: 70px; }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    section p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* PROJECT BLOCKS */
+
+    .project-block {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      margin-top: 18px;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.6);
+      background: radial-gradient(circle at top left, #2b0a28, #050307 60%);
+      min-height: 0;
+      display: flex;
+      align-items: stretch;
+      isolation: isolate;
+    }
+
+    .project-image-wrap {
+      flex: 3;
+      position: relative;
+      overflow: visible;
+      z-index:5;
+    }
+
+    .slides {
+      position: relative;
+      z-index:10;
+    }
+
+    .project-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+ 
+    .project-content {
+      flex: 2;
+      position: relative;
+      z-index: 1;
+      padding: 26px 26px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(150deg, rgba(10, 6, 18, 0.98), rgba(38, 12, 40, 0.95));
+    }
+
+   .project-image-wrap {
+     pointer-events: auto;
+    }  
+
+   .project-content {
+     pointer-events: none;
+    }   
+
+    .project-content * {
+      pointer-events: auto;
+    }
+
+    .project-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #ffccdf;
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    .project-meta {
+      font-size: 0.84rem;
+      color: #f6d9ff;
+    }
+
+    .project-links {
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .project-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .project-block:hover .project-image-wrap img {
+      transform: scale(1.02);
+    }
+
+    /* TWO COLUMN LAYOUTS */
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0,1.6fr) minmax(0,1fr);
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 14px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .list li {
+      margin-bottom: 7px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .awards-grid {
+      columns: 2;
+      column-gap: 24px;
+      margin-top: 12px;
+    }
+
+    .awards-grid li {
+      break-inside: avoid;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #7f7698;
+      padding: 18px 0 26px 0;
+    }
+
+    /* REVEAL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-block.reveal {
+      transform: translateY(40px) scale(0.98);
+    }
+
+    .project-block.reveal.visible {
+      transform: translateY(0) scale(1);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-media {
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        gap: 1.2rem;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+
+      .project-block {
+        flex-direction: column;
+      }
+
+      .project-image-wrap,
+      .project-content {
+        flex: none;
+        width: 100%;
+      }
+
+      .awards-grid { columns: 1; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+/* Slider CSS */
+
+.slides {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+}
+
+.slides img,
+.slides video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.slides img.active,
+.slides video.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+@media (max-width:720px) {
+  .slides {
+    min-height: 220px;
+   }
+ }
+
+
+/* dots */
+.dots {
+  display: flex;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.dots div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.dots div.active {
+  background: #fff;
+}
+
+
+.research-block {
+  margin-top: 24px;
+  border-radius: 20px;
+  background: linear-gradient(140deg, rgba(10,6,18,0.9), rgba(40,12,40,0.85));
+  padding: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.research-toggle {
+  width: 100%;
+  background: rgba(255, 173, 213, 0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  color: #ffddea;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.research-toggle:hover {
+  background: rgba(255, 173, 213, 0.22);
+}
+
+.research-content {
+  display: none;
+  padding: 12px 10px 4px 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  animation: fadeIn 0.35s ease;
+}
+
+.research-content ul {
+  margin-left: 18px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(6px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+
+
+
+/* Awards List */
+.awards-list {
+  list-style: none;
+  padding-left: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.awards-list li {
+  margin-bottom: 6px;
+  break-inside: avoid;
+}
+
+.award-header {
+  margin-top: 24px;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  color: #ffddea;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 4px;
+}
+
+/* Expand Button */
+.expand-awards-btn {
+  margin-top: 14px;
+  background: rgba(255, 173, 213, 0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: #ffddea;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.expand-awards-btn:hover {
+  background: rgba(255, 173, 213, 0.25);
+}
+
+/* Hidden Block */
+.hidden-awards {
+  margin-top: 16px;
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Smooth fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#resume">Résumé</a>
+    <a href="#awards">Awards</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO HEADER (Style A: portrait + QR) -->
+  <div class="hero reveal">
+    <div class="hero-text">
+      <div class="hero-kicker">Embry-Riddle Aeronautical University</div>
+      <div class="hero-kicker">John Wood Community College</div>
+      <h1>Clancy Crawford</h1>
+      <p class="hero-sub">
+        <span>B.S. Aerospace Engineering – Rocket Propulsion Track</span>
+        <span>B.S. Computational Mathematics – Engineering Application Track</span>
+        <span>A.S. Engineering Science (High Honors)</span>
+        <span>A.S. Science - Minor in Physics (Highest Honors)</span>
+      </p>
+      <p class="hero-meta">
+        <span>Graduation: May 2027</span> 
+        <span> Daytona Beach, FL</span>
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="Resume_Clancy_Crawford.pdf" target="_blank" rel="noopener" download>Download Résumé</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="photo.jpg" alt="Clancy Crawford" class="headshot">
+      <div class="qr-block">
+        <p class="qr-caption-top">LinkedIn QR Code/Link</p>
+        <a href="https://www.linkedin.com/in/clancy-crawford" target="_blank" rel="noopner">
+        <img src="LinkedInQR.png" alt="LinkedIn QR code"></a>
+        </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+    <p>
+      Avionics Box Structural and Thermal Analysis &nbsp;|&nbsp; Fuel Grinder - Rocket Prometheus (ERFSEDS) &nbsp;|&nbsp; MATLAB Fitness Progress Tracker &nbsp;|&nbsp; Travel Magnetic Makeup Brush Stand &nbsp;|&nbsp; Projectile Launcher &nbsp;|&nbsp; Basswood Bridge Design &nbsp;|&nbsp; Numerical Methods for ODEs
+    </p>
+    <!-- Avionics Box -->
+      <div class="project-block reveal avionics-slider">
+      <div class="project-image-wrap">
+       <div class="slides">
+        <img src="Projects/Best_Images/ES202_ES305_Project/picture_of_box.jpg">
+        <img src="Projects/Best_Images/ES202_ES305_Project/box_assembly.jpg" alt="Avionics box assembly">          
+        <img src="Projects/Best_Images/ES202_ES305_Project/sheet_metal_ass.jpg">
+        <img src="Projects/Best_Images/ES202_ES305_Project/solids.jpg">
+        <img src="Projects/Best_Images/ES202_ES305_Project/Thermo.jpg">
+       </div>
+      <div class="dots"></div>
+      </div>
+      <div class="project-content">
+        <div class="project-kicker">Structural · Thermal Modeling · SOLIDWORKS</div>
+        <div class="project-title">Avionics Box Structural &amp; Thermal Analysis</div>
+        <p class="project-desc">       
+         Analyzed an aircraft avionics box support structure across multiple flight conditions (takeoff, cruise up to Mach 2.2, turbulence, landing). Performed limit/ultimate load calculations, normal & shear stress analysis, principal stresses, and max shear stress. Sized supply/exhaust air paths by estimating heat transfer, defining boundary conditions, and modeling temperature distribution to ensure safe operating ranges.
+
+          Delivered 3D CAD models, 2D drawings, and a full technical report with recommendations for material selection, weight reduction, and manufacturability improvements.
+        </p>
+        <p class="project-meta">
+          4 Person Team · SOLIDWORKS · Structural &amp; Thermal Modeling
+        </p>
+        <div class="project-links"><div>
+          <a href="Projects/ES202_ES305_Project/ES202_FinalReport.pdf" target="_blank" rel="noopener">Download Solid Mechanics Final Report
+          </a></div><div>
+          <a href="Projects/ES202_ES305_Project/ES305_FinalReport.pdf" target="_blank" rel="noopener">Download Thermodynamics Final Report
+          </a></div></div>
+        </div>
+    </div>
+
+    <!-- Fuel Grinder -->
+    <div class="project-block reveal fuel-slider">
+      <div class="project-image-wrap">
+      <div class="slides">
+        <img src="Projects/Best_Images/Fuel_Grinder/Assem1.jpg" alt="Fuel grinder assembly">
+        <img src="Projects/Best_Images/Fuel_Grinder/engine-test.jpg">
+        <img src="Projects/Best_Images/Fuel_Grinder/Part1.jpg">
+        <img src="Projects/Best_Images/Fuel_Grinder/Part2.jpg">
+        <img src="Projects/Best_Images/Fuel_Grinder/Part3_(2).jpg">   
+       </div>
+       <div class="dots"></div>
+       </div>
+      <div class="project-content">
+        <div class="project-kicker">SOLIDOWRKS · Propulsion Support</div>
+        <div class="project-title">Fuel Grinder – Rocket Prometheus (ERFSEDS)</div>
+        <p class="project-desc">
+          Collaborated with ERFSEDS teammates to design a fuel grinding mechanism for
+          a project rocket. Explored multiple concepts, modeled assemblies, and
+          considered safety, reliability, and integration with the larger propulsion
+          system.
+        </p>
+        <p class="project-meta">
+          Concept Design · Team Collaboration · SOLIDWORKS
+        </p>
+      </div>
+    </div>
+
+    <!-- MATLAB Fitness Tracker -->
+    <div class="project-block reveal matlab-slider">
+      <div class="project-image-wrap">
+      <div class="slides">
+        <img src="Projects/Best_Images/MAtlab_Tracker/body_measurements_fig.jpg" alt="MATLAB fitness tracker plots">
+        <img src="Projects/Best_Images/MAtlab_Tracker/body_measurements_sheet.jpg">
+        <img src="Projects/Best_Images/MAtlab_Tracker/diet_plans_fig.jpg">
+        <img src="Projects/Best_Images/MAtlab_Tracker/diet_plans_sheet.jpg">
+        <img src="Projects/Best_Images/MAtlab_Tracker/goals_and_insights_sheets.jpg">  
+       </div>
+      <div class="dots"></div>
+       </div>
+      <div class="project-content">
+        <div class="project-kicker">MATLAB · Data Visualization</div>
+        <div class="project-title">MATLAB Fitness Progress Tracker</div>
+        <p class="project-desc">
+          Developed a MATLAB tool to track workouts, diet plans, and body measurements
+          over time. Implemented data validation, data storage, and plotting routines
+          so users can monitor trends and progress toward fitness goals.
+        </p>
+        <p class="project-meta">
+          Individual project · App Design
+        </p>
+        <div class="project-links">
+          <div>
+          <a href="Projects/MAtlab%20Tracker/CRAWFORD_12_Final_Project.pdf" target="_blank" rel="noopener">View Matlab Code
+          </a></div><div>
+          <a href="Projects/MAtlab%20Tracker/Fitness%20App.pdf" target="_blank" rel="noopener">
+            View App Documentation
+          </a></div><div>
+          <a href="Projects/MAtlab%20Tracker/Fitness_Tracker_Data.pdf" target="_blank" rel="noopener">View Excel Data
+          </a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travel Magnetic Stand -->
+    <div class="project-block reveal makeup-slider">
+      <div class="project-image-wrap">
+      <div class="slides">
+        <img src="Projects/Best_Images/Travel_Magnetic_Makeup_Brush_Stand/assembled_stand.png" alt="Magnetic brush stand CAD">
+        <img src="Projects/Best_Images/Travel_Magnetic_Makeup_Brush_Stand/in_case.png">
+       </div>
+      <div class="dots"></div>
+       </div>
+      <div class="project-content">
+        <div class="project-kicker">CATIA · Product Design</div>
+        <div class="project-title">Travel Magnetic Makeup Brush Stand</div>
+        <p class="project-desc">
+          Designed a compact, travel-friendly magnetic brush stand featuring 13+ unique
+          complex parts. Modeled parts, subassemblies, and the full assembly, then
+          produced a full engineering drawing package following industry standards.
+        </p>
+        <p class="project-meta">
+          Individual Project · CATIA 
+        </p>
+        <div class="project-links"><div>
+          <a href="Projects/Travel_Magnetic_Makeup_Brush_Stand/Full%20Report.pdf" target="_blank" rel="noopener">Full Report
+          </a></div><div>
+          <a href="Projects/Travel_Magnetic_Makeup_Brush_Stand/Presentation.pdf" target="_blank" rel="noopener">Presentation
+          </a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projectile Launcher -->
+    <div class="project-block reveal projectile-slider">
+      <div class="project-image-wrap">
+      <div class="slides">  
+        <video class="active" src="Projects/Best_Images/Projectile_Launcher/IMG_0035.mp4"controls playsinline muted ></video>
+        <img src="Projects/Best_Images/Projectile_Launcher/IMG_0035.png" alt="Projectile launcher hardware">
+        <img src="Projects/Best_Images/Projectile_Launcher/IMG_0039.png">
+      </div>
+      <div class="dots"></div>
+      </div>
+      <div class="project-content">
+        <div class="project-kicker">Dynamics · Prototyping</div>
+        <div class="project-title">Projectile Launcher</div>
+        <p class="project-desc">
+          Designed and built a mechanical launcher to maximize range for a baseball.
+          Combined SOLIDWORKS design with physical prototyping and experimental testing,
+          then analyzed launch data for initial velocity, energy, and efficiency.
+        </p>
+        <p class="project-meta">
+          2-Person Team · Design, Test, and Data Interpretation
+        </p>
+        <div class="project-links"><div>
+          <a href="Projects/Projectile_Launcher/CatapultInitialDesignReport2024.pdf" target="_blank" rel="noopener">
+            Initial report
+          </a></div><div>
+          <a href="Projects/Projectile_Launcher/ProjectileLaunchersFinalReport.pdf" target="_blank" rel="noopener">
+            Final report
+          </a></div><div>
+          <a href="Projects/Projectile_Launcher/Projectile%20Launcher%20Launch%20Data%202024%20ONLY%20Team%202%20EGR221.pdf" target="_blank" rel="noopener">
+            Launcher Data
+          </a></div><div>
+          <a href="Projects/Projectile_Launcher/IMG_0035.mp4" target="_blank" rel="noopener">
+            Normal Strength Video
+          </a></div><div>
+          <a href="Projects/Projectile_Launcher/IMG_0035.png" target="_blank" rel="noopener">
+            Trajectory Normal Strength Image
+          </a></div><div>
+          <a href="Projects/Projectile_Launcher/IMG_0039.mp4" target="_blank" rel="noopener">
+            High Strength Video
+          </a></div><div>
+          <a href="Projects/Projectile_Launcher/IMG_0039.png" target="_blank" rel="noopener">
+            Trajectory High Strength Image
+          </a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bridge -->
+    <div class="project-block reveal">
+      <div class="project-image-wrap">
+        <img src="Projects/Best_Images/Bridge/Bridge.jpg" alt="Basswood bridge under test">
+      </div>
+      <div class="project-content">
+        <div class="project-kicker">Structures ·Prototyping </div>
+        <div class="project-title">Basswood Bridge Design</div>
+        <p class="project-desc">
+          Constructed a basswood bridge under strict design constraints, targeting the
+          highest possible load-to-weight ratio. Documented the design process, force
+          versus displacement behavior, and failure modes during testing.
+        </p>
+        <p class="project-meta">
+          Individual Project · Design, Test, and Data Interpertation
+        </p>
+        <div class="project-links">
+          <a href="Projects/Bridge/Requirements.pdf" target="_blank" rel="noopener">
+            Requirements
+          </a>
+       </div>
+      </div>
+    </div>
+
+    <!-- Numerical Methods Plot -->
+    <div class="project-block reveal">
+      <div class="project-image-wrap">
+        <img src="Projects/Best_Images/Numerical_Methods_for_ODEs/project_part3_plot.jpg" alt="Numerical methods solution plot">
+      </div>
+      <div class="project-content">
+        <div class="project-kicker">Numerical Methods · ODEs</div>
+        <div class="project-title">Numerical Methods for Ordinary Differential Equations</div>
+        <p class="project-desc">
+          Implemented and compared numerical methods for solving ordinary differential
+          equations, analyzing accuracy and stability. Visualized solution behavior and
+          error trends using MATLAB.
+        </p>
+
+        <p class="project-meta">
+         3-Person Team · Numerical Methods 
+
+        <div class="project-links"><div>
+          <a href="Projects/Numerical_Methods_for_ODEs/Final_presentation_ODE.pdf" target="_blank" rel="noopener">
+            Final Presentation
+          </a></div><div>
+          <a href="Projects/Numerical_Methods_for_ODEs/MA305_Finalproject_report%20(1).pdf" target="_blank" rel="noopener">
+            Final Report
+          </a></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+<!-- Research -->
+<section id="research" class="reveal">
+<div class="research-block">
+  <h2>Research</h2>
+
+  <p>
+    My research focuses on orbital debris, collision avoidance, risk modeling, and 
+    sustainable mission operations.
+  </p>
+
+  <!-- COLLAPSIBLE RESEARCH BLOCK -->
+ 
+    <!-- Summary -->
+    <button class="research-toggle" onclick="toggleResearch(this)">Summary ▾</button>
+    <div class="research-content">
+      <p>
+        Conducted a comprehensive study on orbital debris growth, tracking limitations,
+        collision risk modeling, and debris mitigation strategies for spacecraft operating
+        in Low Earth Orbit (LEO). Integrated NASA’s DRAMA tool, SSA processes, conjunction
+        assessment frameworks, and emerging technologies in autonomous avoidance.
+      </p>
+    </div>
+
+    <!-- Key Findings -->
+    <button class="research-toggle" onclick="toggleResearch(this)">Key Findings ▾</button>
+    <div class="research-content">
+      <ul>
+        <li>LEO debris population is increasing exponentially due to fragmentation events and mega-constellations.</li>
+        <li>Collision risk grows significantly when spacecraft uncertainties overlap (“probability of collision” model).</li>
+        <li>Maneuver planning becomes fuel-limited and time-sensitive when conjunction windows are short.</li>
+        <li>Ground-based laser photon pressure can produce measurable delta-v (~1 cm/s) for debris displacement.</li>
+      </ul>
+    </div>
+
+    <!-- Collision Risk Modeling -->
+    <button class="research-toggle" onclick="toggleResearch(this)">Collision Risk Modeling ▾</button>
+    <div class="research-content">
+      <ul>
+        <li>Used NASA’s DRAMA framework to analyze conjunction frequency, atmospheric drag effects, and reentry survivability models.</li>
+        <li>Evaluated covariance-based probability of collision (Pc) using position and velocity uncertainties.</li>
+        <li>Compared threshold Pc values used by NASA and ESA for deciding automatic vs. manual avoidance maneuvers.</li>
+        <li>Analyzed conjunction tables showing severity categories based on kinetic energy and breakup potential.</li>
+      </ul>
+    </div>
+
+    <!-- Mitigation Methods -->
+    <button class="research-toggle" onclick="toggleResearch(this)">Mitigation Strategies ▾</button>
+    <div class="research-content">
+      <ul>
+        <li>Case-by-case maneuver planning using delta-v optimization and timeline constraints.</li>
+        <li>Autonomous avoidance using linear programming for fast, low-fuel trajectory adjustments.</li>
+        <li>Laser photon-pressure displacement for pushing small debris off collision paths.</li>
+        <li>ESA debris mitigation practices: passivation, 25-year deorbit rule, fragmentation control.</li>
+      </ul>
+    </div>
+
+    <!-- Presentation Viewer -->
+    <button class="research-toggle" onclick="toggleResearch(this)">Presentation Viewer ▾</button>
+    <div class="research-content">
+      <p>You can flip through the presentation or download it below:</p>        
+        <iframe
+          src="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_Assignment%203.pdf"
+          style="width:100%; height:450px; border:1px solid rgba(255,255,255,0.2); border-radius:12px;">
+        </iframe>
+    </div>
+
+    <!-- Downloads -->
+    <button class="research-toggle" onclick="toggleResearch(this)">Downloads ▾</button>
+    <div class="research-content">
+      <p><a href="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_HW3_LaTeX.pdf" target="_blank">Research Report
+     </p> </a>
+     <p> <a href="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_Assignment%203.pptx" target="_blank">Research PowerPoint
+</a></p></div>
+
+</div></section>
+  <!-- RESUME --> 
+ <section id="resume" class="reveal">
+ <div class="research-block">
+
+    <h2>Résumé Overview</h2>
+    <div class="two-col">
+      <div>
+        <p>
+          I’m pursuing dual Bachelor’s degrees in Aerospace Engineering (Rocket Propulsion
+          Track) and Computational Mathematics (Engineering Application Track) at Embry-Riddle
+          Aeronautical University, graduating in May 2027. Before transferring, I completed
+          two Associate degrees at John Wood Community College while competing as a collegiate
+          libero.
+        </p>
+        <ul class="list">
+          <li><strong>Embry-Riddle Aeronautical University</strong> 
+          <li> B.S. Aerospace Engineering (Rocket Propulsion) · May 2027 </li>
+          <li> B.S. Computational Mathematics (Engineering Application) · May 2027</li>
+          <li><strong>John Wood Community College</strong>
+          <li> A.S. Engineering Science (High Honors) · May 2024</li>
+          <li> A.S. Science with Minor in Physics (Highest Honors) · May 2024</li>
+          <li><strong>Technical Skills:</strong> MATLAB, SOLIDWORKS, CATIA, LaTeX, MobaXterm, Microsoft Office</li>
+          <li><strong>Languages:</strong> Python, Java, HTML, CSS</li>
+          <li><strong>Leadership:</strong></li> 
+          <li>ERAU: Treasurer Club Volleyball</li>
+          <li>JWCC: Collegiate Libero, Vice President of Phi Theta Kappa, Vice President of S.T.E.M. Club, Selected to be on Student-Athlete Advisory Council</li>
+        </ul>
+      </div>
+      <div>
+         <p style="margin-top:12px;">
+          <a class="btn primary" href="Resume_Clancy_Crawford.pdf" target="_blank" rel="noopener">
+            Download Résumé
+          </a>
+        </p>
+        <p style="margin-top:18px;">
+          I also maintain a volleyball-focused résumé for athletics and coaching
+          opportunities.
+        </p>
+         <p style="margin-top:12px;">
+          <a class="btn primary" href="Volleyball%20Resume.pdf" target="_blank" rel="noopener">
+            Download Volleyball Résumé
+          </a>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- AWARDS -->
+<section id="awards" class="reveal">
+<div class="research-block">
+  <h2>Awards & Honors</h2>
+
+  <h3 class="award-header">Highlighted Awards</h3>
+<ul class="awards-list">
+    <li>Gold Scholar – Coca-Cola Academic Team (National Level)</li>
+    <li>All-USA Academic Team - Phi Theta Kappa</li>
+    <li>All-Illinois Academic Team - Phi Theta Kapp</li>
+    <li>NJCAA First Team Academic All-American Women's Volleyball</li>
+    <li>Renewable Women of Excellence Scholarship</li>
+    <li>Microsoft Office Specialist State Champion (Word &amp; Excel)</li>
+  </ul>
+
+  <!-- Expand Button -->
+  <button class="expand-awards-btn" onclick="toggleAwards()">View Full Awards List ▾</button>
+
+  <!-- Hidden Full List -->
+<div id="full-awards" class="hidden-awards">
+
+  <h3 class="award-header">Academic Honors</h3>
+  <ul class="awards-list">
+    <li>Invited to Tau Beta Pi – Embry Riddle Aeronautical University</li>
+    <li>Dean’s List – Embry Riddle Aeronautical University (Fall 2024)</li>
+    <li>Dean’s List – John Wood Community College (All Semesters 2022–2024)</li>
+    <li>Inducted into Phi Theta Kappa – Alpha Tau Gamma Chapter</li>
+  </ul>
+
+  <h3 class="award-header">Leadership & Service</h3>
+  <ul class="awards-list">
+    <li>Elected Treasurer – ERAU Women’s & Men’s Club Volleyball (2025–2026)</li>
+    <li>Vice President – Phi Theta Kappa (2023–2024)</li>
+    <li>Vice President – S.T.E.M. Club (2023–2024)</li>
+    <li>Student-Athlete Advisory Council – John Wood Community College (2022–2023)</li>
+  </ul>
+
+  <h3 class="award-header">Scholarships & Grants</h3>
+  <ul class="awards-list">
+    <li>Women of Excellence Scholarship ($5,000 – Renewable)</li>
+    <li>Embry-Riddle Transfer Scholarship ($15,000)</li>
+    <li>Embry-Riddle Transfer Grant ($250)</li>
+    <li>Athletic Scholarship – John Wood CC (2022–2023 · ¼ Tuition)</li>
+    <li>TrailBlazer Scholarship – John Wood CC (2022–2023 · ½ Tuition)</li>
+    <li>Athletic Scholarship – John Wood CC (2023–2024 · ¼ Tuition)</li>
+    <li>TrailBlazer Scholarship – John Wood CC (2023–2024 · ½ Tuition)</li>
+    <li>MSBA John T. Belcher Scholarship – School Representative (2022)</li>
+  </ul>
+
+  <h3 class="award-header">Athletic Achievements</h3>
+  <ul class="awards-list">
+    <li>NJCAA Third Team Academic All-American – Women’s Volleyball (2022–2023)</li>
+    <li>Recruited as Collegiate Volleyball Athlete – John Wood Community College (2022)</li>
+  </ul>
+
+  <h3 class="award-header">STEM & Technical Awards</h3>
+  <ul class="awards-list">
+    <li>Missouri Cybersecurity Challenge – 4th Place (Preliminary Round)</li>
+    <li>Missouri Cybersecurity Challenge – 7th in State (2022)</li>
+    <li>Microsoft Office Specialist U.S. National Championship – Word (Participant)</li>
+    <li>Microsoft Office Specialist State Champion – Word (2016)</li>
+    <li>Microsoft Office Specialist State Champion – Excel (2016)</li>
+  </ul>
+
+  <h3 class="award-header">High School Honors</h3>
+  <ul class="awards-list">
+    <li>Summa Cum Laude Graduate – Hallsville High School (2022)</li>
+    <li>Gold Scholar – Hallsville High School (2022)</li>
+    <li>National Student Leadership Conference – Aerospace Engineering Finalist (2021)</li>
+    <li>National Student Leadership Conference – Aerospace Engineering Course Completion (2021)</li>
+  </ul>
+
+</div></div>
+</section>
+
+
+
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+  <div class="research-block">
+    <h2>About</h2>
+    <p style="margin-top:10px;">
+      Before transferring to Embry-Riddle, I earned two Associate degrees at John Wood
+      Community College while competing as a collegiate libero and serving in multiple
+      leadership roles, including Vice President of Phi Theta Kappa and S.T.E.M. Club.
+      Now at ERAU, I’m the Treasurer for Club Volleyball and involved in organizations
+      focused on space exploration and engineering.
+    </p>
+    <p style="margin-top:10px;">
+      Long term, I hope to work on propulsion and space systems that push the boundaries
+      of what’s possible. I want to combine my background in rocket propulsion, computational
+      mathematics, and structural analysis to help impact the next generation of astronautics. 
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+  <div class="research-block">
+    <h2>Contact</h2>
+    <p>
+      I’m open to internships, research positions, and collaborations related to aerospace,
+      propulsion, systems or structural analysis, and numerical methods.
+    </p>
+    <ul class="list" style="margin-top:10px;">
+      <li><strong>Email:</strong>
+        <a href="mailto:crawfoc1@my.erau.edu">crawfoc1@my.erau.edu</a>
+      </li>
+      <li><strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/clancy-crawford" target="_blank" rel="noopener">
+          linkedin.com/in/clancy-crawford
+        </a>
+      </li>
+      <li><strong>Location:</strong> Port Orange  Daytona Beach, FL</li>
+    </ul>
+</div>
+</div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 Clancy Crawford. All rights reserved.
+</footer>
+
+
+<!-- SlIDER FOR PROJECT IMAGES -->
+
+
+<script>
+function setupSlider(selector) {
+    const root = document.querySelector(selector);
+    if (!root) return;
+
+    const slider = root.querySelector(".project-image-wrap");
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll(".slides img, .slides video");
+    const dotsContainer = slider.querySelector(".dots");
+
+    let index = 0;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dotsContainer.appendChild(dot);
+        if (i === 0) dot.classList.add("active");
+    });
+
+    const dots = dotsContainer.querySelectorAll("div");
+
+    function showSlide(i) {
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+
+        slides[i].classList.add("active");
+        dots[i].classList.add("active");
+        index = i;
+    }
+
+        dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => showSlide(i));
+    });
+
+    
+    slides.forEach((slide, i) => {
+        slide.addEventListener("click", () => {
+            let next = (i + 1) % slides.length;
+            showSlide(next);
+        });
+    });
+
+    showSlide(0);
+}
+
+// activate sliders
+setupSlider(".avionics-slider");
+setupSlider(".fuel-slider");
+setupSlider(".matlab-slider");
+setupSlider(".makeup-slider");
+setupSlider(".projectile-slider");
+</script>
+
+
+<script>
+function toggleResearch(btn) {
+  const content = btn.nextElementSibling;
+  const visible = content.style.display === "block";
+
+  // Toggle
+  content.style.display = visible ? "none" : "block";
+
+  // Update arrow
+  btn.innerHTML = visible
+    ? btn.innerHTML.replace("▴", "▾")
+    : btn.innerHTML.replace("▾", "▴");
+}
+</script>
+
+
+
+<!-- SIMPLE SCROLL REVEAL ANIMATIONS -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  });
+</script>
+
+
+<script>
+function toggleAwards() {
+  const fullList = document.getElementById("full-awards");
+  const btn = document.querySelector(".expand-awards-btn");
+
+  if (fullList.style.display === "block") {
+    fullList.style.display = "none";
+    btn.innerHTML = "View Full Awards List ▾";
+  } else {
+    fullList.style.display = "block";
+    btn.innerHTML = "Hide Full Awards List ▴";
+  }
+}
+</script>
+
+</body>
+</html>
+
+
