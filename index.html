@@ -624,8 +624,36 @@
   <section id="projects" class="reveal">
     <h2>Projects</h2>
     <p>
-     Magnetic Alignment Dynamics for Drone Payload Docking Report &nbsp;|&nbsp; Avionics Box Structural and Thermal Analysis &nbsp;|&nbsp; Fuel Grinder - Rocket Prometheus (ERFSEDS) &nbsp;|&nbsp; MATLAB Fitness Progress Tracker &nbsp;|&nbsp; Travel Magnetic Makeup Brush Stand &nbsp;|&nbsp; Projectile Launcher &nbsp;|&nbsp; Basswood Bridge Design &nbsp;|&nbsp; Numerical Methods for ODEs
+      Causal Analysis of Aviation Accident Lethality &nbsp;|&nbsp; Magnetic Alignment Dynamics for Drone Payload Docking Report &nbsp;|&nbsp; Avionics Box Structural and Thermal Analysis &nbsp;|&nbsp; Fuel Grinder - Rocket Prometheus (ERFSEDS) &nbsp;|&nbsp; MATLAB Fitness Progress Tracker &nbsp;|&nbsp; Travel Magnetic Makeup Brush Stand &nbsp;|&nbsp; Projectile Launcher &nbsp;|&nbsp; Basswood Bridge Design &nbsp;|&nbsp; Numerical Methods for ODEs
     </p>
+<!-- Aviation Fatalities Causal Analysis -->
+    <div class="project-block reveal avaition analysis-slider">
+      <div class="project-image-wrap">
+       <div class="slides">
+        <img src="Projects/Best_Images/Lethal_Aviation_Accidents/causal_graph.png">
+        <img src="Projects/Best_Images/Lethal_Aviation_Accidents/classification_performance.png">
+        <img src="Projects/Best_Images/Lethal_Aviation_Accidents/ols_coefficients">
+       </div>
+      <div class="dots"></div>
+      </div>
+      <div class="project-content">
+        <div class="project-kicker">Causal Inference · Data Modeling · Python</div>
+        <div class="project-title">Causal Analysis of Aviation Accident Lethality</div>
+        <p class="project-desc">       
+         Analyzed 5,268 fatal aviation accidents from 1908–2009 to identify contributing factors associated with high-lethality outcomes. Converted unstructured accident summaries into structured cause categories using keyword classification, then applied causal discovery methods to move beyond simple correlation-based safety analysis.
+         Used FCI causal discovery with chi-square conditional independence testing, domain-informed constraints, and regression-based causal effect estimation to study how factors such as CFIT, weather, military operation status, fuel issues, and mechanical failure influenced accident severity.
+
+        </p>
+        <p class="project-meta">
+          6-Person Team · Python · Causal Inference · Regression Analysis
+        </p>
+        <div class="project-links"><div>
+          <a href="Projects/Lethal_Avaition_Accidents/MA413_505_Final_Project_Report.pdf" target="_blank" rel="noopener">Download Analysis of Lethal Avaition Accidents Report </a>
+          <a href="Projects/Lethal_Avaition_Accidents/MA_505_Final_Presentation.pptx" target="_blank" rel="noopener">Download Presentation of Analysis of Lethal Avaition Accidents
+          </a></div></div>
+      </div>
+    </div>
+    
     <!-- Modeling Magnetic Alignment Dynamics in a Drone Payload Docking System -->
       <div class="project-block reveal magnetic alignment-slider">
       <div class="project-image-wrap">
@@ -1174,6 +1202,7 @@ function setupSlider(selector) {
 }
 
 // activate sliders
+setupSlider(".avaition analysis-slider"); 
 setupSlider(".magnetic alignment-slider"); 
 setupSlider(".avionics-slider");
 setupSlider(".fuel-slider");
