@@ -19,32 +19,6 @@
       padding-bottom: 6px;
     }
 
-    .project-jump-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-      margin-bottom: 22px;
-    }
-
-    .project-jump-list a {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255, 173, 213, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #ffe08a;
-      font-size: 0.82rem;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .project-jump-list a:hover {
-      background: rgba(255, 173, 213, 0.24);
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
     html {
       scroll-behavior: smooth;
     }
@@ -243,11 +217,6 @@
       border-radius: 16px;
     }
 
-    .qr-block small {
-      font-size: 0.75rem;
-      color: #ffe7f4;
-    }
-
 
     .qr-caption-top {
       text-align: center;
@@ -279,125 +248,6 @@
       font-size: 0.98rem;
     }
 
-    /* EXPERIENCE SECTION */
-
-    .experience-card {
-      margin-top: 22px;
-      border-radius: 26px;
-      overflow: hidden;
-      background: radial-gradient(circle at top left, #2b0a28, #050307 65%);
-      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .experience-header {
-      padding: 28px;
-      background: linear-gradient(150deg, rgba(10, 6, 18, 0.98), rgba(38, 12, 40, 0.95));
-    }
-
-    .experience-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #ffccdf;
-      margin-bottom: 8px;
-    }
-
-    .experience-title {
-      font-size: 1.55rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .experience-desc {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-      max-width: 920px;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      padding: 0 28px 26px 28px;
-      background: linear-gradient(150deg, rgba(10, 6, 18, 0.98), rgba(38, 12, 40, 0.95));
-    }
-
-    .experience-mini-card {
-      background: rgba(255, 173, 213, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 16px;
-      padding: 15px;
-    }
-
-    .experience-mini-card h3 {
-      font-size: 0.95rem;
-      color: #ffddea;
-      margin-bottom: 6px;
-    }
-
-    .experience-mini-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .experience-media {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 18px;
-      padding: 22px 28px 28px 28px;
-    }
-
-    .experience-media-main img,
-    .experience-media-main video {
-      width: 100%;
-      border-radius: 18px;
-      display: block;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
-    }
-
-    .experience-media-side {
-      display: grid;
-      gap: 14px;
-    }
-
-    .experience-media-side img {
-      width: 100%;
-      border-radius: 16px;
-      display: block;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-    }
-
-    .experience-links {
-      padding: 0 28px 28px 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .experience-links a {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255, 173, 213, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #ffe08a;
-      font-size: 0.84rem;
-      text-decoration: none;
-    }
-
-    .experience-links a:hover {
-      background: rgba(255, 173, 213, 0.24);
-      text-decoration: none;
-    }
-
-    @media (max-width: 820px) {
-
-      .experience-grid,
-      .experience-media {
-        grid-template-columns: 1fr;
-      }
-    }
 
     .slides video {
       background: #000;
@@ -584,17 +434,6 @@
       color: var(--text-muted);
     }
 
-    .awards-grid {
-      columns: 2;
-      column-gap: 24px;
-      margin-top: 12px;
-    }
-
-    .awards-grid li {
-      break-inside: avoid;
-      margin-bottom: 6px;
-    }
-
     footer {
       text-align: center;
       font-size: 0.8rem;
@@ -651,10 +490,6 @@
       .project-content {
         flex: none;
         width: 100%;
-      }
-
-      .awards-grid {
-        columns: 1;
       }
 
       .two-col {
@@ -821,18 +656,6 @@
       animation: fadeIn 0.4s ease;
     }
 
-    /* Smooth fade */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(6px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 
@@ -996,7 +819,7 @@
 
       <p>
         Academic and technical projects in aerospace systems, numerical modeling,
-        structural analysis, CAD design, datadriven engineering and more!
+        structural analysis, CAD design, data-driven engineering and more!
       </p>
 
       <div class="project-link-groups">
@@ -1175,6 +998,8 @@
         </div>
       </div>
       <h3 class="project-category">Additional Projects</h3>
+
+
       <!-- Numerical Methods Plot -->
       <div id="numerical-odes" class="project-block reveal">
         <div class="project-image-wrap">
@@ -1190,10 +1015,10 @@
             error trends using MATLAB.
           </p>
 
-          <p class="project-meta">
-            3-Person Team · Numerical Methods
-
-          <div class="project-links">
+        <p class="project-meta">
+          3-Person Team · Numerical Methods
+        </p>
+        <div class="project-links">
             <div>
               <a href="Projects/Numerical_Methods_for_ODEs/Final_presentation_ODE.pptx" target="_blank" rel="noopener">
                 Final Presentation
