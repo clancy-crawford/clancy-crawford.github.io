@@ -280,6 +280,59 @@
     }
 
     /* PROJECT BLOCKS */
+    .project-link-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+      margin-bottom: 30px;
+    }
+
+    .project-link-card {
+      background: linear-gradient(140deg, rgba(10, 6, 18, 0.9), rgba(40, 12, 40, 0.85));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .project-link-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #ffddea;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-jump-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-jump-list a {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 173, 213, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffe08a;
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-jump-list a:hover {
+      background: rgba(255, 173, 213, 0.24);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    @media (max-width: 720px) {
+      .project-link-groups {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .project-block {
       position: relative;
@@ -698,8 +751,9 @@
 
   <main>
 
+
     <!-- EXPERIENCE -->
-    <section id="experience" class="reveal">
+    <!-- <section id="experience" class="reveal">
       <h2>Experience</h2>
 
       <div class="project-block reveal mayott-slider">
@@ -736,30 +790,99 @@
           </p>
         </div>
       </div>
+    </section> -->
+
+    <section id="experience" class="reveal">
+      <h2>Experience</h2>
+      <p>
+        Relevant engineering experience in startup aerospace design, heavy-lift drone development, and payload system
+        integration.
+      </p>
+
+      <div class="project-block reveal mayott-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/Mayott_Aero/LYV_26/IMG_9220.JPEG"
+              alt="Mayott Aerospace Launch Your Venture award team!">
+            <img src="Projects/Best_Images/Mayott_Aero/LYV_26/20260403_175619.jpg"
+              alt="Mayott Aerospace team awarded funding check and me!">
+          </div>
+          <div class="dots"></div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-kicker">Field Experience · Heavy-Lift Drone Technology · CAD</div>
+          <div class="project-title">CAD Engineer — Mayott Aerospace</div>
+
+          <p class="project-desc">
+            Supporting the development of heavy-lift drone technology through CAD design, payload integration concepts,
+            connector research, and early-stage prototype planning. My work focuses on translating aircraft-level
+            mission needs into manufacturable design concepts for payload handling and drone architecture development.
+          </p>
+
+          <p class="project-desc">
+            Tangible completed work includes creating the full Launch Your Venture presentation materials for Mayott
+            Aerospace and supporting the team’s competition effort, where the company earned $10,000 in startup funding.
+            Current ongoing work includes connector and payload docking research, CAD-based mechanism development,
+            architecture trade studies, and prototype documentation.
+          </p>
+
+          <p class="project-meta">
+            CAD Engineer · Payload Integration · Connector Design Research · Startup Development · Technical
+            Presentation
+          </p>
+
+          <div class="project-links">
+            <div>
+              <video class="active" src="Projects/Best_Images/Mayott_Aero/LYV_26/launch_your_venture_video.mp4" controls
+                playsinline muted></video>
+              View Launch Your Venture Presentation Video
+              <a href="https://prezi.com/view/GMI03G0bwPB44Vn5zlHD/?referral_token=EKXoL-lnB3FN" target="_blank"
+                rel="noopener">
+                View Launch Your Venture Prezi
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
       <h2>Projects</h2>
+
       <p>
         Selected academic and technical projects in aerospace systems, numerical modeling,
         structural analysis, CAD design, and data-driven engineering.
       </p>
 
-      <div class="project-jump-list">
-        <h3 class="project-category">Featured Projects</h3>
-        <a href="#magnetic-alignment">Magnetic Alignment Dynamics</a>
-        <a href="#avionics-box">Avionics Box Structural &amp; Thermal Analysis</a>
-        <a href="#aviation-causal-analysis">Causal Analysis of Aviation Accident Lethality</a>
-        <a href="#fuel-grinder">Fuel Grinder – Rocket Prometheus</a>
-        <h3 class="project-category">Additional Projects</h3>
-        <a href="#numerical-odes">Numerical Methods for ODEs</a>
-        <a href="#projectile-launcher">Projectile Launcher</a>
-        <a href="#bridge-design">Basswood Bridge Design</a>
-        <a href="#matlab-tracker">MATLAB Fitness Tracker</a>
-        <a href="#makeup-stand">Travel Magnetic Makeup Brush Stand</a>
+      <div class="project-link-groups">
+
+        <div class="project-link-card">
+          <h3>Featured Projects</h3>
+          <div class="project-jump-list">
+            <a href="#magnetic-alignment">Magnetic Alignment Dynamics</a>
+            <a href="#avionics-box">Avionics Box Structural &amp; Thermal Analysis</a>
+            <a href="#aviation-causal-analysis">Causal Analysis of Aviation Accident Lethality</a>
+            <a href="#fuel-grinder">Fuel Grinder – Rocket Prometheus</a>
+          </div>
+        </div>
+
+        <div class="project-link-card">
+          <h3>Additional Projects</h3>
+          <div class="project-jump-list">
+            <a href="#numerical-odes">Numerical Methods for ODEs</a>
+            <a href="#projectile-launcher">Projectile Launcher</a>
+            <a href="#bridge-design">Basswood Bridge Design</a>
+            <a href="#matlab-tracker">MATLAB Fitness Tracker</a>
+            <a href="#makeup-stand">Travel Magnetic Makeup Brush Stand</a>
+          </div>
+        </div>
+
       </div>
+
+      <h3 class="project-category">Featured Projects</h3>
 
       <!-- Modeling Magnetic Alignment Dynamics in a Drone Payload Docking System -->
       <div id="magnetic-alignment" class="project-block reveal magnetic_alignment-slider">
@@ -909,7 +1032,7 @@
           </p>
         </div>
       </div>
-
+      <h3 class="project-category">Additional Projects</h3>
       <!-- Numerical Methods Plot -->
       <div id="numerical-odes" class="project-block reveal">
         <div class="project-image-wrap">
