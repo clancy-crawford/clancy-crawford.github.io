@@ -6,6 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+
+  .project-category {
+    margin-top: 34px;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    color: #ffddea;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 6px;
+  }
+
+  .project-jump-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+    margin-bottom: 22px;
+  }
+
+  .project-jump-list a {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(255, 173, 213, 0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #ffe08a;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .project-jump-list a:hover {
+    background: rgba(255, 173, 213, 0.24);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
     :root {
       --deep-plum: #2B0A28;
       --maroon: #B12A4A;
@@ -575,14 +619,15 @@
 
 <header>
   <!-- NAVIGATION -->
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#research">Research</a>
-    <a href="#resume">Résumé</a>
-    <a href="#awards">Awards</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#research">Research</a>
+  <a href="#resume">Résumé</a>
+  <a href="#awards">Awards</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
 
   <!-- HERO HEADER (Style A: portrait + QR) -->
   <div class="hero reveal">
@@ -620,14 +665,63 @@
 
 <main>
 
+    <!-- EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <h2>Experience</h2>
+
+    <div class="project-block reveal mayott-slider">
+      <div class="project-image-wrap">
+        <div class="slides">
+          <img src="Experience/Mayott_Aerospace/launch_your_venture_team.jpg" alt="Mayott Aerospace team awarded funding at Launch Your Venture">
+          <img src="Experience/Mayott_Aerospace/launch_your_venture_check.jpg" alt="Mayott Aerospace Launch Your Venture award check">
+        </div>
+        <div class="dots"></div>
+      </div>
+
+      <div class="project-content">
+        <div class="project-kicker">Startup · Heavy-Lift Drone Technology · CAD</div>
+        <div class="project-title">CAD Engineer — Mayott Aerospace</div>
+
+        <p class="project-desc">
+          Contributing to the development of heavy-lift drone technology through CAD design, payload integration concepts, and early-stage prototype planning. Supported Mayott Aerospace’s Launch Your Venture competition effort, where the team earned $10,000 in funding for its company vision and progress toward scalable drone systems.
+        </p>
+
+        <p class="project-desc">
+          Current work includes connector and payload docking research, CAD-based mechanism development, architecture trade studies, and technical documentation for prototype development.
+        </p>
+
+        <p class="project-meta">
+          CAD Engineer · Mayott Aerospace · Heavy-Lift Drones · Payload Systems · Startup Development
+        </p>
+      </div>
+    </div>
+  </section>
+
+
   <!-- PROJECTS -->
   <section id="projects" class="reveal">
     <h2>Projects</h2>
-    <p>
-      Causal Analysis of Aviation Accident Lethality &nbsp;|&nbsp; Magnetic Alignment Dynamics for Drone Payload Docking Report &nbsp;|&nbsp; Avionics Box Structural and Thermal Analysis &nbsp;|&nbsp; Fuel Grinder - Rocket Prometheus (ERFSEDS) &nbsp;|&nbsp; MATLAB Fitness Progress Tracker &nbsp;|&nbsp; Travel Magnetic Makeup Brush Stand &nbsp;|&nbsp; Projectile Launcher &nbsp;|&nbsp; Basswood Bridge Design &nbsp;|&nbsp; Numerical Methods for ODEs
-    </p>
+<p>
+  Selected academic and technical projects in aerospace systems, numerical modeling,
+  structural analysis, CAD design, and data-driven engineering.
+</p>
+
+<div class="project-jump-list">
+  <h3 class="project-category">Featured Projects</h3>
+  <a href="#magnetic-alignment">Magnetic Alignment Dynamics</a>
+  <a href="#avionics-box">Avionics Box Structural &amp; Thermal Analysis</a>
+  <a href="#aviation-causal-analysis">Causal Analysis of Aviation Accident Lethality</a>
+  <a href="#fuel-grinder">Fuel Grinder – Rocket Prometheus</a>
+  <h3 class="project-category">Additional Projects</h3>
+  <a href="#numerical-odes">Numerical Methods for ODEs</a>
+  <a href="#projectile-launcher">Projectile Launcher</a>
+  <a href="#bridge-design">Basswood Bridge Design</a>
+  <a href="#matlab-tracker">MATLAB Fitness Tracker</a>
+  <a href="#makeup-stand">Travel Magnetic Makeup Brush Stand</a>
+</div>
+
 <!-- Aviation Fatalities Causal Analysis -->
-    <div class="project-block reveal aviation_analysis-slider">
+    <div id="aviation-causal-analysis" class="project-block reveal aviation_analysis-slider">
       <div class="project-image-wrap">
        <div class="slides">
         <img src="Projects/Best_Images/Lethal_Aviation_Accidents/causal_graph.png">
@@ -655,7 +749,7 @@
     </div>
     
     <!-- Modeling Magnetic Alignment Dynamics in a Drone Payload Docking System -->
-      <div class="project-block reveal magnetic_alignment-slider">
+      <div id="magnetic-alignment" class="project-block reveal magnetic_alignment-slider">
       <div class="project-image-wrap">
        <div class="slides">
         <img src="Projects/Best_Images/Modeling_Magnetic_Alignment_Dynamics_in_Drone_Docking/chat_3D_render_magnetic_docking.png">
@@ -681,8 +775,7 @@
       </div>
     </div>
     <!-- Avionics Box -->
-      <div class="project-block reveal avionics-slider">
-      <div class="project-image-wrap">
+       <div id="avionics-box" class="project-block reveal avionics-slider">      <div class="project-image-wrap">
        <div class="slides">
         <img src="Projects/Best_Images/ES202_ES305_Project/picture_of_box.jpg">
         <img src="Projects/Best_Images/ES202_ES305_Project/box_assembly.jpg" alt="Avionics box assembly">          
@@ -712,7 +805,7 @@
     </div>
 
     <!-- Fuel Grinder -->
-    <div class="project-block reveal fuel-slider">
+    <div id="fuel-grinder" class="project-block reveal fuel-slider">
       <div class="project-image-wrap">
       <div class="slides">
         <img src="Projects/Best_Images/Fuel_Grinder/Assem1.jpg" alt="Fuel grinder assembly">
@@ -739,7 +832,7 @@
     </div>
 
     <!-- MATLAB Fitness Tracker -->
-    <div class="project-block reveal matlab-slider">
+      <div id="matlab-tracker" class="project-block reveal matlab-slider">    
       <div class="project-image-wrap">
       <div class="slides">
         <img src="Projects/Best_Images/MAtlab_Tracker/body_measurements_fig.jpg" alt="MATLAB fitness tracker plots">
@@ -775,7 +868,7 @@
     </div>
 
     <!-- Travel Magnetic Stand -->
-    <div class="project-block reveal makeup-slider">
+      <div id="makeup-stand" class="project-block reveal makeup-slider">
       <div class="project-image-wrap">
       <div class="slides">
         <img src="Projects/Best_Images/Travel_Magnetic_Makeup_Brush_Stand/assembled_stand.png" alt="Magnetic brush stand CAD">
@@ -804,7 +897,7 @@
     </div>
 
     <!-- Projectile Launcher -->
-    <div class="project-block reveal projectile-slider">
+      <div id="projectile-launcher" class="project-block reveal projectile-slider">
       <div class="project-image-wrap">
       <div class="slides">  
         <video class="active" src="Projects/Best_Images/Projectile_Launcher/IMG_0035.mp4"controls playsinline muted ></video>
@@ -851,7 +944,7 @@
     </div>
 
     <!-- Bridge -->
-    <div class="project-block reveal">
+      <div id="bridge-design" class="project-block reveal">
       <div class="project-image-wrap">
         <img src="Projects/Best_Images/Bridge/Bridge.jpg" alt="Basswood bridge under test">
       </div>
@@ -875,7 +968,7 @@
     </div>
 
     <!-- Numerical Methods Plot -->
-    <div class="project-block reveal">
+      <div id="numerical-odes" class="project-block reveal">
       <div class="project-image-wrap">
         <img src="Projects/Best_Images/Numerical_Methods_for_ODEs/project_part3_plot.jpg" alt="Numerical methods solution plot">
       </div>
@@ -1202,6 +1295,7 @@ function setupSlider(selector) {
 }
 
 // activate sliders
+setupSlider(".mayott-slider");
 setupSlider(".aviation_analysis-slider"); 
 setupSlider(".magnetic_alignment-slider"); 
 setupSlider(".avionics-slider");
