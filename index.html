@@ -254,6 +254,171 @@
       border-radius: 0;
     }
 
+    /* EXPERIENCE SECTION */
+
+    .experience-role-card {
+      margin-top: 22px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(150deg, rgba(10, 6, 18, 0.98), rgba(38, 12, 40, 0.95));
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 28px;
+    }
+
+    .experience-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #ffccdf;
+      margin-bottom: 8px;
+    }
+
+    .experience-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .experience-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+    }
+
+    .experience-date {
+      font-size: 0.9rem;
+      color: #f6d9ff;
+    }
+
+    .experience-detail {
+      font-size: 0.9rem;
+      color: #f6d9ff;
+      margin-bottom: 14px;
+    }
+
+    .experience-desc {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      margin-bottom: 12px;
+    }
+
+    .experience-teams {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .experience-team-card {
+      background: rgba(255, 173, 213, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 15px;
+    }
+
+    .experience-team-card h3 {
+      font-size: 0.95rem;
+      color: #ffddea;
+      margin-bottom: 6px;
+    }
+
+    .experience-team-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .accomplishments-heading {
+      margin-top: 30px;
+      margin-bottom: 12px;
+      text-align: center;
+      font-size: 1.05rem;
+      color: #ffddea;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .accomplishment-card {
+      margin-top: 18px;
+      border-radius: 22px;
+      background: radial-gradient(circle at top left, #2b0a28, #050307 65%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .accomplishment-content {
+      padding: 22px 24px 12px 24px;
+    }
+
+    .accomplishment-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #ffccdf;
+      margin-bottom: 6px;
+    }
+
+    .accomplishment-title {
+      font-size: 1.25rem;
+      font-weight: 650;
+      margin-bottom: 8px;
+    }
+
+    .accomplishment-desc {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .accomplishment-media {
+      padding: 0 24px 20px 24px;
+    }
+
+    .accomplishment-media .slides {
+      min-height: 430px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .accomplishment-media .dots {
+      justify-content: center;
+    }
+
+    .accomplishment-links {
+      padding: 0 24px 24px 24px;
+    }
+
+    .accomplishment-links a {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 173, 213, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffe08a;
+      font-size: 0.84rem;
+      text-decoration: none;
+    }
+
+    .accomplishment-links a:hover {
+      background: rgba(255, 173, 213, 0.24);
+      text-decoration: none;
+    }
+
+    @media (max-width: 720px) {
+      .experience-teams {
+        grid-template-columns: 1fr;
+      }
+
+      .accomplishment-media .slides {
+        min-height: 260px;
+      }
+    }
 
     /* PROJECT BLOCKS */
     .project-link-groups {
@@ -655,7 +820,6 @@
       display: none;
       animation: fadeIn 0.4s ease;
     }
-
   </style>
 </head>
 
@@ -747,71 +911,85 @@
         payload integration, and early-stage company operations.
       </p>
 
-      <div class="project-block reveal mayott-slider">
-        <div class="project-image-wrap">
-          <div class="slides">
-            <video class="active" src="Projects/Best_Images/Mayott_Aero/LYV_26/launch_your_venture_video.mp4" controls
-              playsinline muted></video>
+      <div class="experience-role-card reveal">
+        <div class="experience-kicker">Field Experience · Heavy-Lift Drone Technology · Startup Operations</div>
 
-            <img src="Projects/Best_Images/Mayott_Aero/LYV_26/IMG_9220.JPEG"
-              alt="Mayott Aerospace Launch Your Venture team">
-
-            <img src="Projects/Best_Images/Mayott_Aero/LYV_26/20260403_175619.jpg"
-              alt="Mayott Aerospace Launch Your Venture award">
-          </div>
-
-          <div class="dots"></div>
+        <div class="experience-title-row">
+          <div class="experience-title">CAD Engineer — Mayott Aerospace</div>
+          <div class="experience-date">Spring 2026 – Present</div>
         </div>
 
-        <div class="project-content">
-          <div class="project-kicker">Field Experience · Heavy-Lift Drone Technology · Startup Operations</div>
-          <div class="project-title">CAD Engineer — Mayott Aerospace</div>
+        <p class="experience-detail">
+          <strong>Location:</strong> Daytona Beach, FL
+        </p>
 
-          <p class="experience-detail">
-            <strong>Location:</strong> Daytona Beach, FL &nbsp;|&nbsp;
-            <strong>Dates:</strong> Spring 2026 – Present
-          </p>
+        <p class="experience-desc">
+          Supporting the development of heavy-lift drone technology through CAD design, connector research,
+          payload integration concepts, and early-stage prototype planning. My work focuses on translating
+          mission-level needs into manufacturable design concepts for payload handling and drone architecture
+          development.
+        </p>
 
-          <p class="project-desc">
-            Supporting the development of heavy-lift drone technology through CAD design, connector research,
-            payload integration concepts, and early-stage prototype planning. My work focuses on translating
-            mission-level needs into manufacturable design concepts for payload handling and drone architecture
-            development.
-          </p>
+        <div class="experience-teams">
+          <div class="experience-team-card">
+            <h3>Connector Team</h3>
+            <p>
+              Contributing to research and design planning for payload docking and connector mechanisms,
+              including alignment concepts, mechanical interface ideas, and prototype-focused trade studies.
+            </p>
+          </div>
 
-          <p class="project-desc">
-            <strong>Connector Team:</strong> Contributing to research and design planning for payload docking and
-            connector
-            mechanisms, including alignment concepts, mechanical interface ideas, and prototype-focused trade studies.
-          </p>
+          <div class="experience-team-card">
+            <h3>Operations Team</h3>
+            <p>
+              Supporting internal documentation, SOP-style processes, KPI tracking concepts, and business
+              readiness materials as Mayott Aerospace prepares for audits, funding milestones, and prototype
+              development.
+            </p>
+          </div>
+        </div>
 
-          <p class="project-desc">
-            <strong>Operations Team:</strong> Supporting company operations by helping develop internal documentation,
-            SOP-style processes, KPI tracking concepts, and business readiness materials as Mayott Aerospace prepares
-            for future audits, funding milestones, and prototype development.
-          </p>
+        <h3 class="accomplishments-heading">Selected Accomplishments</h3>
 
-          <p class="project-desc">
-            <strong>Selected Accomplishment:</strong> Created the full Launch Your Venture presentation materials and
-            supported Mayott Aerospace’s competition effort, where the team earned $10,000 in startup funding.
-          </p>
+        <div class="accomplishment-card mayott-slider">
+          <div class="accomplishment-content">
+            <div class="accomplishment-label">Competition Support · Presentation Development · Startup Funding</div>
+            <div class="accomplishment-title">Launch Your Venture — Mayott Aerospace</div>
 
-          <p class="project-meta">
-            CAD · Connector Research · Payload Integration · SOP Development · KPI Planning · Startup Operations
-          </p>
+            <p class="accomplishment-desc">
+              Created the full Launch Your Venture presentation materials and supported Mayott Aerospace’s
+              competition effort, where the team earned $10,000 in startup funding. The media below is attached
+              specifically to this accomplishment.
+            </p>
+          </div>
 
-          <div class="project-links">
-            <div>
-              <a href="https://prezi.com/view/GMI03G0bwPB44Vn5zlHD/?referral_token=EKXoL-lnB3FN" target="_blank"
-                rel="noopener">
-                View Launch Your Venture Prezi
-              </a>
+          <div class="accomplishment-media">
+            <div class="project-image-wrap">
+              <div class="slides">
+                <video class="active" src="Projects/Best_Images/Mayott_Aero/LYV_26/launch_your_venture_video.mp4"
+                  controls playsinline muted></video>
+
+                <img src="Projects/Best_Images/Mayott_Aero/LYV_26/IMG_9220.JPEG"
+                  alt="Mayott Aerospace Launch Your Venture team">
+
+                <img src="Projects/Best_Images/Mayott_Aero/LYV_26/20260403_175619.jpg"
+                  alt="Mayott Aerospace Launch Your Venture award">
+              </div>
+
+              <div class="dots"></div>
             </div>
           </div>
+
+          <div class="accomplishment-links">
+            <a href="https://prezi.com/view/GMI03G0bwPB44Vn5zlHD/?referral_token=EKXoL-lnB3FN" target="_blank"
+              rel="noopener">
+              View Launch Your Venture Prezi
+            </a>
+          </div>
         </div>
+
       </div>
     </section>
-
 
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
@@ -1015,10 +1193,10 @@
             error trends using MATLAB.
           </p>
 
-        <p class="project-meta">
-          3-Person Team · Numerical Methods
-        </p>
-        <div class="project-links">
+          <p class="project-meta">
+            3-Person Team · Numerical Methods
+          </p>
+          <div class="project-links">
             <div>
               <a href="Projects/Numerical_Methods_for_ODEs/Final_presentation_ODE.pptx" target="_blank" rel="noopener">
                 Final Presentation
