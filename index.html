@@ -398,6 +398,11 @@
         grid-template-columns: 1fr;
       }
     }
+    
+    .slides video {
+  background: #000;
+  border-radius: 0;
+}
 
 
     /* PROJECT BLOCKS */
@@ -914,69 +919,62 @@
       </div>
     </section> -->
 
-    <section id="experience" class="reveal">
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
   <h2>Experience</h2>
+
   <p>
-    Relevant engineering experience in startup aerospace design, heavy-lift drone development, and payload system integration.
+    Relevant engineering experience in startup aerospace design, heavy-lift drone development,
+    and payload system integration.
   </p>
 
-  <div class="experience-card reveal">
+  <div class="project-block reveal mayott-slider">
+    <div class="project-image-wrap">
+      <div class="slides">
+        <img src="Projects/Best_Images/Mayott_Aero/LYV_26/IMG_9220.JPEG"
+          alt="Mayott Aerospace Launch Your Venture team">
 
-    <div class="experience-header">
-      <div class="experience-kicker">Field Experience · Heavy-Lift Drone Technology · CAD</div>
-      <div class="experience-title">CAD Engineer — Mayott Aerospace</div>
+        <img src="Projects/Best_Images/Mayott_Aero/LYV_26/20260403_175619.jpg"
+          alt="Mayott Aerospace Launch Your Venture award">
 
-      <p class="experience-desc">
+        <video class="active" src="Projects/Best_Images/Mayott_Aero/LYV_26/launch_your_venture_video.mp4" controls playsinline muted></video>
+
+      </div>
+
+      <div class="dots"></div>
+    </div>
+
+    <div class="project-content">
+      <div class="project-kicker">Field Experience · Heavy-Lift Drone Technology · CAD</div>
+      <div class="project-title">CAD Engineer — Mayott Aerospace</div>
+
+      <p class="project-desc">
         Supporting the development of heavy-lift drone technology through CAD design, payload integration concepts,
         connector research, and early-stage prototype planning. My work focuses on translating aircraft-level mission
         needs into manufacturable design concepts for payload handling and drone architecture development.
       </p>
-    </div>
 
-    <div class="experience-grid">
-      <div class="experience-mini-card">
-        <h3>CAD & Design Support</h3>
-        <p>
-          Contributing to CAD-based mechanism development, payload integration concepts, and design planning for heavy-lift drone systems.
-        </p>
-      </div>
+      <p class="project-desc">
+        Created the full Launch Your Venture presentation materials and supported Mayott Aerospace’s competition effort,
+        where the team earned $10,000 in startup funding.
+      </p>
 
-      <div class="experience-mini-card">
-        <h3>Connector Research</h3>
-        <p>
-          Investigating connector and payload docking concepts to support reliable payload handling and future prototype development.
-        </p>
-      </div>
+      <p class="project-meta">
+        CAD Engineer · Payload Integration · Connector Design Research · Startup Development · Technical Presentation
+      </p>
 
-      <div class="experience-mini-card">
-        <h3>Launch Your Venture</h3>
-        <p>
-          Created the full Launch Your Venture presentation materials and supported the team’s competition effort, where Mayott Aerospace earned $10,000 in startup funding.
-        </p>
+      <div class="project-links">
+        <div>
+          <a href="https://prezi.com/view/GMI03G0bwPB44Vn5zlHD/?referral_token=EKXoL-lnB3FN" target="_blank" rel="noopener">
+            View Launch Your Venture Prezi
+          </a>
+        </div>
       </div>
     </div>
-
-    <div class="experience-media">
-      <div class="experience-media-main">
-        <video src="Projects/Best_Images/Mayott_Aero/LYV_26/launch_your_venture_video.mp4" controls playsinline muted></video>
-      </div>
-
-      <div class="experience-media-side">
-        <img src="Projects/Best_Images/Mayott_Aero/LYV_26/IMG_9220.JPEG" alt="Mayott Aerospace Launch Your Venture team">
-        <img src="Projects/Best_Images/Mayott_Aero/LYV_26/20260403_175619.jpg" alt="Mayott Aerospace Launch Your Venture funding award">
-      </div>
-    </div>
-
-    <div class="experience-links">
-      <a href="https://prezi.com/view/GMI03G0bwPB44Vn5zlHD/?referral_token=EKXoL-lnB3FN" target="_blank" rel="noopener">
-        View Launch Your Venture Prezi
-      </a>
-    </div>
-
   </div>
 </section>
-
-
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
       <h2>Projects</h2>
@@ -1677,6 +1675,7 @@
     }
 
     // activate sliders
+    setupSlider(".mayott-slider");
     setupSlider(".aviation_analysis-slider");
     setupSlider(".magnetic_alignment-slider");
     setupSlider(".avionics-slider");
