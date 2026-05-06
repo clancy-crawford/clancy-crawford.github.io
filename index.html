@@ -1776,12 +1776,12 @@
       // Update arrow
       btn.innerHTML = visible
         ? btn.innerHTML.replace("▴", "▾")
-        : btn.innerHTML.replace("▾", "▴");
+        : btn.innerH          replace("▾", "▴");
     }
-  </script>
-
-
-
+        </script>
+  
+  
+  
   <!-- SIMPLE SCROLL REVEAL ANIMATIONS -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1792,13 +1792,16 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, {
+        threshold: 0.01,
+        rootMargin: "0px 0px -40px 0px"
+      });
 
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     });
   </script>
-
-
+  
+  
   <script>
     function toggleAwards() {
       const fullList = document.getElementById("full-awards");
