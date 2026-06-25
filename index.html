@@ -771,6 +771,43 @@
 
 
 
+    /* Certifications */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .certification-card {
+      background: rgba(255, 173, 213, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .certification-card h3 {
+      font-size: 1rem;
+      color: #ffddea;
+      margin-bottom: 6px;
+    }
+
+    .certification-meta {
+      color: #f6d9ff;
+      font-size: 0.86rem;
+      margin-bottom: 8px;
+    }
+
+    .certification-card p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Awards List */
     .awards-list {
       list-style: none;
@@ -832,6 +869,7 @@
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#resume">Résumé</a>
+      <a href="#certifications">Certifications</a>
       <a href="#awards">Awards</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -1572,6 +1610,37 @@
               <a class="btn primary" href="Volleyball%20Resume.pdf" target="_blank" rel="noopener">
                 Download Volleyball Résumé
               </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="reveal">
+      <div class="research-block">
+        <h2>Certifications</h2>
+        <p>
+          Technical and productivity credentials that support engineering documentation, data handling,
+          and professional communication.
+        </p>
+
+        <div class="certifications-grid">
+          <div class="certification-card">
+            <h3>Microsoft Office Specialist - Word</h3>
+            <div class="certification-meta">Microsoft Office Specialist credential</div>
+            <p>
+              Certified proficiency in document formatting, layout, editing, and professional
+              report preparation; recognized as a Microsoft Office Specialist State Champion in Word.
+            </p>
+          </div>
+
+          <div class="certification-card">
+            <h3>Microsoft Office Specialist - Excel</h3>
+            <div class="certification-meta">Microsoft Office Specialist credential</div>
+            <p>
+              Certified proficiency in spreadsheet creation, formulas, data organization, and
+              analysis workflows; recognized as a Microsoft Office Specialist State Champion in Excel.
+            </p>
           </div>
         </div>
       </div>
