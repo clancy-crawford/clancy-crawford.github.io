@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   [
     ".aero-slider",
     ".mayott-slider",
+    ".fvf-slider",
     ".aviation_analysis-slider",
     ".magnetic_alignment-slider",
     ".avionics-slider",

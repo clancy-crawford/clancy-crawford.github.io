@@ -96,12 +96,12 @@
     .hero {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 28px 20px 10px 20px;
+      padding: 34px 20px 24px 20px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 30px;
     }
 
     .hero-text {
@@ -118,13 +118,15 @@
     }
 
     .hero h1 {
-      font-size: 2.6rem;
+      font-size: 3rem;
+      line-height: 1.08;
       margin-bottom: 10px;
     }
 
     .hero-sub {
-      font-size: 1rem;
-      margin-bottom: 10px;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      max-width: 680px;
     }
 
     .hero-sub span {
@@ -173,7 +175,7 @@
     }
 
     .hero-media {
-      flex: 0 0 260px;
+      flex: 0 0 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -181,12 +183,86 @@
     }
 
     .headshot {
-      width: 210px;
-      height: 210px;
+      width: 230px;
+      height: 230px;
       border-radius: 26px;
       object-fit: cover;
       box-shadow: 0 20px 55px rgba(0, 0, 0, 0.5);
       border: 3px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+      max-width: 620px;
+    }
+
+    .hero-proof {
+      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+
+    .hero-proof strong {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-proof span {
+      display: block;
+      font-size: 0.9rem;
+      opacity: 0.92;
+      margin-top: 2px;
+    }
+
+    .home-priority-grid,
+    .home-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .home-priority-card,
+    .home-proof-card {
+      background: linear-gradient(140deg, rgba(10, 6, 18, 0.9), rgba(40, 12, 40, 0.85));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .home-priority-card h3,
+    .home-proof-card h3 {
+      font-size: 1rem;
+      color: #ffddea;
+      margin-bottom: 8px;
+    }
+
+    .home-priority-card p,
+    .home-proof-card p {
+      font-size: 0.9rem;
+    }
+
+    .home-priority-card a {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.84rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .home-section-kicker {
+      color: #ffccdf;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
     .qr-block {
@@ -341,6 +417,10 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       overflow: hidden;
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .milestones-card.featured-milestone {
+      border-color: rgba(255, 224, 138, 0.42);
     }
 
     .milestones-content {
@@ -629,6 +709,11 @@
       .hero-media {
         align-self: center;
       }
+
+      .home-priority-grid,
+      .home-proof-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 720px) {
@@ -649,6 +734,14 @@
       }
 
       .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .hero-proof-grid {
         grid-template-columns: 1fr;
       }
     }
