@@ -894,6 +894,94 @@
       padding-bottom: 4px;
     }
 
+    .accomplishment-intro {
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .accomplishment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .accomplishment-card {
+      background: linear-gradient(140deg, rgba(10, 6, 18, 0.9), rgba(40, 12, 40, 0.85));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .evidence-preview {
+      display: block;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .evidence-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .evidence-preview:hover img {
+      transform: scale(1.02);
+    }
+
+    .accomplishment-kicker {
+      color: #ffccdf;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .accomplishment-card h3 {
+      font-size: 1.05rem;
+      color: #ffddea;
+      margin-bottom: 8px;
+    }
+
+    .accomplishment-card p {
+      font-size: 0.9rem;
+    }
+
+    .evidence-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .evidence-links a,
+    .linked-awards-list a {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 173, 213, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffe08a;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .evidence-links a:hover,
+    .linked-awards-list a:hover {
+      background: rgba(255, 173, 213, 0.24);
+      text-decoration: none;
+    }
+
+    .linked-awards-list li {
+      margin-bottom: 9px;
+    }
+
     /* Expand Button */
     .expand-awards-btn {
       margin-top: 14px;
@@ -933,6 +1021,10 @@
     @media (max-width: 720px) {
       .certification-card.featured {
         grid-column: auto;
+      }
+
+      .accomplishment-grid {
+        grid-template-columns: 1fr;
       }
     }
 
