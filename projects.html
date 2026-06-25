@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Clancy Crawford</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="resume.html">Résumé</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="awards.html">Awards</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+
+      <p>
+        Academic and technical projects in aerospace systems, numerical modeling,
+        structural analysis, CAD design, data-driven engineering and more!
+      </p>
+
+      <div class="project-link-groups">
+
+        <div class="project-link-card">
+          <h3>Featured Projects</h3>
+          <div class="project-jump-list">
+            <a href="#magnetic-alignment">Magnetic Alignment Dynamics</a>
+            <a href="#avionics-box">Avionics Box Structural &amp; Thermal Analysis</a>
+            <a href="#experimental-aerodynamics">Experimental Aerodynamics &amp; Wind Tunnel Analysis</a>
+            <a href="#aviation-causal-analysis">Causal Analysis of Aviation Accident Lethality</a>
+            <a href="#fuel-grinder">Fuel Grinder – Rocket Prometheus</a>
+          </div>
+        </div>
+
+        <div class="project-link-card">
+          <h3>Additional Projects</h3>
+          <div class="project-jump-list">
+            <a href="#numerical-odes">Numerical Methods for ODEs</a>
+            <a href="#projectile-launcher">Projectile Launcher</a>
+            <a href="#bridge-design">Basswood Bridge Design</a>
+            <a href="#matlab-tracker">MATLAB Fitness Tracker</a>
+            <a href="#makeup-stand">Travel Magnetic Makeup Brush Stand</a>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="project-category">Featured Projects</h3>
+
+      <!-- Modeling Magnetic Alignment Dynamics in a Drone Payload Docking System -->
+      <div id="magnetic-alignment" class="project-block reveal magnetic_alignment-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img
+              src="Projects/Best_Images/Modeling_Magnetic_Alignment_Dynamics_in_Drone_Docking/chat_3D_render_magnetic_docking.png">
+            <img src="Projects/Best_Images/Modeling_Magnetic_Alignment_Dynamics_in_Drone_Docking/Angular_Alignment.png">
+            <img
+              src="Projects/Best_Images/Modeling_Magnetic_Alignment_Dynamics_in_Drone_Docking/theta_axis_response_plot.png">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">Numerical Modeling · MATLAB</div>
+          <div class="project-title">Magnetic Alignment Dynamics for Drone Payload Docking Report</div>
+          <p class="project-desc">
+            Modeled a two-axis magnetic docking connector for a heavy-lift payload drone using nonlinear rotational
+            differential equation dynamics. Developed a two-axis ball-joint alignment model for pitch and yaw motion,
+            where magnetic restoring torque drives the connector toward alignment and damping reduces oscillatory motion
+            during docking.
+            Delivered a full technical report with derivations.
+
+          </p>
+          <p class="project-meta">
+            MATLAB · ODE Modeling · Rotational Dynamics · Drone Systems
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/MA442/MA442_Project_ClancyCrawford.pdf" target="_blank" rel="noopener">Download Modeling
+                Magnetic Alignment Dynamics in a Drone Payload Docking System
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avionics Box -->
+      <div id="avionics-box" class="project-block reveal avionics-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/ES202_ES305_Project/picture_of_box.jpg">
+            <img src="Projects/Best_Images/ES202_ES305_Project/box_assembly.jpg" alt="Avionics box assembly">
+            <img src="Projects/Best_Images/ES202_ES305_Project/sheet_metal_ass.jpg">
+            <img src="Projects/Best_Images/ES202_ES305_Project/solids.jpg">
+            <img src="Projects/Best_Images/ES202_ES305_Project/Thermo.jpg">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">Structural · Thermal Modeling · SOLIDWORKS</div>
+          <div class="project-title">Avionics Box Structural &amp; Thermal Analysis</div>
+          <p class="project-desc">
+            Analyzed an aircraft avionics box support structure across multiple flight conditions (takeoff, cruise up to
+            Mach
+            2.2, turbulence, landing). Performed limit/ultimate load calculations, normal & shear stress analysis,
+            principal
+            stresses, and max shear stress. Sized supply/exhaust air paths by estimating heat transfer, defining
+            boundary
+            conditions, and modeling temperature distribution to ensure safe operating ranges.
+
+            Delivered 3D CAD models, 2D drawings, and a full technical report with recommendations for material
+            selection,
+            weight reduction, and manufacturability improvements.
+          </p>
+          <p class="project-meta">
+            4-Person Team · SOLIDWORKS · Structural &amp; Thermal Modeling
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/ES202_ES305_Project/ES202_FinalReport.pdf" target="_blank" rel="noopener">Download Solid
+                Mechanics Final Report
+              </a>
+            </div>
+            <div>
+              <a href="Projects/ES202_ES305_Project/ES305_FinalReport.pdf" target="_blank" rel="noopener">Download
+                Thermodynamics Final Report
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experimental Aerodynamics -->
+      <div id="experimental-aerodynamics" class="project-block reveal aero-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/Exp_Aerodynamics/airfoil_cp_distribution.png"
+              alt="NACA 4412 pressure coefficient distribution">
+            <img src="Projects/Best_Images/Exp_Aerodynamics/airfoil_lift_curve.png"
+              alt="NACA 4412 lift coefficient versus angle of attack">
+            <img src="Projects/Best_Images/Exp_Aerodynamics/canard_delta_lift.png"
+              alt="Corrected lift versus angle of attack for canard delta wing">
+            <img src="Projects/Best_Images/Exp_Aerodynamics/supersonic_schlieren.png"
+              alt="Schlieren visualization of supersonic nozzle flow">
+          </div>
+          <div class="dots"></div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-kicker">Experimental Aerodynamics · Wind Tunnel Testing · MATLAB</div>
+          <div class="project-title">Experimental Aerodynamics & Wind Tunnel Analysis</div>
+          
+          <p class="project-desc">
+            Conducted wind tunnel experiments on airfoil, canard-delta wing, and supersonic nozzle configurations. Reduced data in
+            MATLAB to calculate aerodynamic coefficients, pressure distributions, force/moment trends, uncertainty, and nozzle
+            flow behavior, connecting results to stall, drag, Reynolds number effects, shock formation, and overexpanded flow.
+          </p>
+          
+          <p class="project-meta"> MATLAB · Wind Tunnel Testing · Aerodynamic Coefficients · Uncertainty Analysis · Compressible
+            Flow
+          </p>
+
+          <div class="project-links">
+            <div>
+              <a href="Projects/Best_Images/Exp_Aerodynamics/NACA_4412_Airfoil_Report.pdf" target="_blank"
+                rel="noopener">
+                NACA 4412 Airfoil Report
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Best_Images/Exp_Aerodynamics/Canard_Delta_Wing_Report.pdf" target="_blank"
+                rel="noopener">
+                Canard Delta Wing Report
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Best_Images/Exp_Aerodynamics/Supersonic_Flow_Visualization_Report.pdf" target="_blank"
+                rel="noopener">
+                Supersonic Flow Report
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Aviation Fatalities Causal Analysis -->
+      <div id="aviation-causal-analysis" class="project-block reveal aviation_analysis-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/Lethal_Aviation_Accidents/causal_graph.png">
+            <img src="Projects/Best_Images/Lethal_Aviation_Accidents/classification_performance.png">
+            <img src="Projects/Best_Images/Lethal_Aviation_Accidents/ols_coefficients.png">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">Causal Inference · Data Modeling · Python</div>
+          <div class="project-title">Causal Analysis of Aviation Accident Lethality</div>
+          <p class="project-desc">
+            Analyzed 5,268 fatal aviation accidents from 1908–2009 to identify contributing factors associated with
+            high-lethality outcomes. Converted unstructured crash summaries into structured cause categories using
+            keyword classification, then applied causal discovery techniques to move beyond correlation-based safety
+            analysis.
+            Used FCI causal discovery with chi-square conditional independence testing, domain-informed constraints, and
+            regression-based causal effect estimation to evaluate how factors such as CFIT, weather, military operation
+            status, fuel issues, and mechanical failure influenced accident severity.
+
+          </p>
+          <p class="project-meta">
+            6-Person Team · Python · Causal Inference · Regression Analysis
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/Lethal_Aviation_Accidents/MA413_505_Final_Project_Report.pdf" target="_blank"
+                rel="noopener">Download Analysis of Lethal Aviation Accidents Report </a>
+            </div>
+            <div>
+              <a href="Projects/Lethal_Aviation_Accidents/MA_505_Final_Presentation.pptx" target="_blank" rel="noopener">Download
+                Presentation of Analysis of Lethal Aviation Accidents
+              </a>
+            </div>
+          </div>
+          </div>
+          </div>
+
+
+      <!-- Fuel Grinder -->
+      <div id="fuel-grinder" class="project-block reveal fuel-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/Fuel_Grinder/Assem1.jpg" alt="Fuel grinder assembly">
+            <img src="Projects/Best_Images/Fuel_Grinder/engine-test.jpg">
+            <img src="Projects/Best_Images/Fuel_Grinder/Part1.jpg">
+            <img src="Projects/Best_Images/Fuel_Grinder/Part2.jpg">
+            <img src="Projects/Best_Images/Fuel_Grinder/Part3_(2).jpg">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">SOLIDWORKS · Propulsion Support</div>
+          <div class="project-title">Fuel Grinder – Rocket Prometheus (ERFSEDS)</div>
+          <p class="project-desc">
+            Collaborated with ERFSEDS teammates to design a fuel grinding mechanism for
+            a project rocket. Explored multiple concepts, modeled assemblies, and
+            considered safety, reliability, and integration with the larger propulsion
+            system.
+          </p>
+          <p class="project-meta">
+            Concept Design · Team Collaboration · SOLIDWORKS
+          </p>
+        </div>
+      </div>
+      <h3 class="project-category">Additional Projects</h3>
+
+
+      <!-- Numerical Methods Plot -->
+      <div id="numerical-odes" class="project-block reveal">
+        <div class="project-image-wrap">
+          <img src="Projects/Best_Images/Numerical_Methods_for_ODEs/project_part3_plot.jpg"
+            alt="Numerical methods solution plot">
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">Numerical Methods · ODEs</div>
+          <div class="project-title">Numerical Methods for Ordinary Differential Equations</div>
+          <p class="project-desc">
+            Implemented and compared numerical methods for solving ordinary differential
+            equations, analyzing accuracy and stability. Visualized solution behavior and
+            error trends using MATLAB.
+          </p>
+
+          <p class="project-meta">
+            3-Person Team · Numerical Methods
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/Numerical_Methods_for_ODEs/Final_presentation_ODE.pptx" target="_blank" rel="noopener">
+                Final Presentation
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Numerical_Methods_for_ODEs/MA305_Finalproject_report.pdf" target="_blank"
+                rel="noopener">
+                Final Report
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projectile Launcher -->
+      <div id="projectile-launcher" class="project-block reveal projectile-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <video class="active" src="Projects/Best_Images/Projectile_Launcher/IMG_0035.mp4" controls playsinline
+              muted></video>
+            <img src="Projects/Best_Images/Projectile_Launcher/IMG_0035.png" alt="Projectile launcher hardware">
+            <img src="Projects/Best_Images/Projectile_Launcher/IMG_0039.png">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">Dynamics · Prototyping</div>
+          <div class="project-title">Projectile Launcher</div>
+          <p class="project-desc">
+            Designed and built a mechanical launcher to maximize range for a baseball.
+            Combined SOLIDWORKS design with physical prototyping and experimental testing,
+            then analyzed launch data for initial velocity, energy, and efficiency.
+          </p>
+          <p class="project-meta">
+            2-Person Team · Design, Test, and Data Interpretation
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/Projectile_Launcher/CatapultInitialDesignReport2024.pdf" target="_blank" rel="noopener">
+                Initial report
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Projectile_Launcher/ProjectileLaunchersFinalReport.pdf" target="_blank" rel="noopener">
+                Final report
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Projectile_Launcher/Projectile%20Launcher%20Launch%20Data%202024%20ONLY%20Team%202%20EGR221.pdf"
+                target="_blank" rel="noopener">
+                Launcher Data
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Projectile_Launcher/IMG_0035.mp4" target="_blank" rel="noopener">
+                Normal Strength Video
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Projectile_Launcher/IMG_0035.png" target="_blank" rel="noopener">
+                Trajectory Normal Strength Image
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Projectile_Launcher/IMG_0039.mp4" target="_blank" rel="noopener">
+                High Strength Video
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Projectile_Launcher/IMG_0039.png" target="_blank" rel="noopener">
+                Trajectory High Strength Image
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bridge -->
+      <div id="bridge-design" class="project-block reveal">
+        <div class="project-image-wrap">
+          <img src="Projects/Best_Images/Bridge/Bridge.jpg" alt="Basswood bridge under test">
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">Structures ·Prototyping </div>
+          <div class="project-title">Basswood Bridge Design</div>
+          <p class="project-desc">
+            Constructed a basswood bridge under strict design constraints, targeting the
+            highest possible load-to-weight ratio. Documented the design process, force
+            versus displacement behavior, and failure modes during testing.
+          </p>
+          <p class="project-meta">
+            Individual Project · Design, Test, and Data Interpretation
+          </p>
+          <div class="project-links">
+            <a href="Projects/Bridge/Requirements.pdf" target="_blank" rel="noopener">
+              Requirements
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATLAB Fitness Tracker -->
+      <div id="matlab-tracker" class="project-block reveal matlab-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/MAtlab_Tracker/body_measurements_fig.jpg" alt="MATLAB fitness tracker plots">
+            <img src="Projects/Best_Images/MAtlab_Tracker/body_measurements_sheet.jpg">
+            <img src="Projects/Best_Images/MAtlab_Tracker/diet_plans_fig.jpg">
+            <img src="Projects/Best_Images/MAtlab_Tracker/diet_plans_sheet.jpg">
+            <img src="Projects/Best_Images/MAtlab_Tracker/goals_and_insights_sheets.jpg">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">MATLAB · Data Visualization</div>
+          <div class="project-title">MATLAB Fitness Progress Tracker</div>
+          <p class="project-desc">
+            Developed a MATLAB tool to track workouts, diet plans, and body measurements
+            over time. Implemented data validation, data storage, and plotting routines
+            so users can monitor trends and progress toward fitness goals.
+          </p>
+          <p class="project-meta">
+            Individual project · App Design
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/MAtlab%20Tracker/CRAWFORD_12_Final_Project.pdf" target="_blank" rel="noopener">View
+                Matlab Code
+              </a>
+            </div>
+            <div>
+              <a href="Projects/MAtlab%20Tracker/Fitness%20App.pdf" target="_blank" rel="noopener">
+                View App Documentation
+              </a>
+            </div>
+            <div>
+              <a href="Projects/MAtlab%20Tracker/Fitness_Tracker_Data.pdf" target="_blank" rel="noopener">View Excel
+                Data
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Magnetic Stand -->
+      <div id="makeup-stand" class="project-block reveal makeup-slider">
+        <div class="project-image-wrap">
+          <div class="slides">
+            <img src="Projects/Best_Images/Travel_Magnetic_Makeup_Brush_Stand/assembled_stand.png"
+              alt="Magnetic brush stand CAD">
+            <img src="Projects/Best_Images/Travel_Magnetic_Makeup_Brush_Stand/in_case.png">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <div class="project-content">
+          <div class="project-kicker">CATIA · Product Design</div>
+          <div class="project-title">Travel Magnetic Makeup Brush Stand</div>
+          <p class="project-desc">
+            Designed a compact, travel-friendly magnetic brush stand featuring 13+ unique
+            complex parts. Modeled parts, subassemblies, and the full assembly, then
+            produced a full engineering drawing package following industry standards.
+          </p>
+          <p class="project-meta">
+            Individual Project · CATIA
+          </p>
+          <div class="project-links">
+            <div>
+              <a href="Projects/Travel_Magnetic_Makeup_Brush_Stand/Full%20Report.pdf" target="_blank"
+                rel="noopener">Full Report
+              </a>
+            </div>
+            <div>
+              <a href="Projects/Travel_Magnetic_Makeup_Brush_Stand/Presentation.pdf" target="_blank"
+                rel="noopener">Presentation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+<!-- ABOUT -->
+    <section id="about" class="reveal">
+      <div class="research-block">
+        <h2>About</h2>
+        <p style="margin-top:10px;">
+          Before transferring to Embry-Riddle, I earned two Associate degrees at John Wood
+          Community College while competing as a collegiate libero and serving in multiple
+          leadership roles, including Vice President of Phi Theta Kappa and S.T.E.M. Club.
+          Now at ERAU, I’m the Treasurer for Club Volleyball and involved in organizations
+          focused on space exploration and engineering.
+        </p>
+        <p style="margin-top:10px;">
+          Long term, I hope to work on propulsion and space systems that push the boundaries
+          of what’s possible. I want to combine my background in rocket propulsion, computational
+          mathematics, and structural analysis to help impact the next generation of astronautics.
+        </p>
+      </div>
+    </section>
+
+<!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="research-block">
+        <h2>Contact</h2>
+        <p>
+          I’m open to internships, research positions, and collaborations related to aerospace,
+          propulsion, systems or structural analysis, and numerical methods.
+        </p>
+        <ul class="list" style="margin-top:10px;">
+          <li><strong>Email:</strong>
+            <a href="mailto:crawfoc1@my.erau.edu">crawfoc1@my.erau.edu</a>
+          </li>
+          <li><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/clancy-crawford" target="_blank" rel="noopener">
+              linkedin.com/in/clancy-crawford
+            </a>
+          </li>
+          <li><strong>Location:</strong> Port Orange Daytona Beach, FL</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Clancy Crawford. All rights reserved.
+  </footer>
+
+</body>
+
+</html>
