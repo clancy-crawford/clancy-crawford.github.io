@@ -34,7 +34,8 @@
       </p>
 
       <h3 class="selected-awards-heading">Highlighted Awards</h3>
-      <div class="accomplishment-grid">
+      <div class="highlighted-awards-slider" data-awards-slider>
+        <div class="highlighted-awards-track">
         <article class="accomplishment-card">
           <a class="evidence-preview" href="Projects/Best_Images/Mayott_Aero/FVF_26/florida-venture-forum-award-group.jpg"
             target="_blank" rel="noopener">
@@ -191,6 +192,20 @@
             </a>
           </div>
         </article>
+        </div>
+        <div class="highlighted-awards-controls" aria-label="Highlighted awards slider controls">
+          <button class="award-slider-btn" type="button" data-awards-prev aria-label="Previous highlighted award">
+            Prev
+          </button>
+          <div class="award-slider-count" aria-live="polite">
+            <span data-awards-current>01</span>
+            <span>/</span>
+            <span data-awards-total>08</span>
+          </div>
+          <button class="award-slider-btn" type="button" data-awards-next aria-label="Next highlighted award">
+            Next
+          </button>
+        </div>
       </div>
     </section>
 
