@@ -68,18 +68,12 @@ function toggleAwards() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  [
-    ".aero-slider",
-    ".mayott-slider",
-    ".fvf-slider",
-    ".aviation_analysis-slider",
-    ".magnetic_alignment-slider",
-    ".avionics-slider",
-    ".fuel-slider",
-    ".matlab-slider",
-    ".makeup-slider",
-    ".projectile-slider"
-  ].forEach(setupSlider);
+  document.querySelectorAll(".project-block, .milestones-card").forEach((sliderRoot, index) => {
+    if (!sliderRoot.querySelector(".slides")) return;
+    const sliderClass = `auto-slider-${index}`;
+    sliderRoot.classList.add(sliderClass);
+    setupSlider(`.${sliderClass}`);
+  });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
