@@ -445,39 +445,12 @@ section p {
   box-shadow: var(--shadow);
 }
 
-.research-story-hero {
-  min-height: clamp(260px, 34vw, 460px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: clamp(12px, 2vw, 18px);
-  padding: clamp(22px, 5vw, 72px);
-  border-bottom: 1px solid var(--line);
-}
-
-.research-story-kicker,
 .research-story-copy span {
   color: var(--link);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-}
-
-.research-story-hero h3 {
-  max-width: 1080px;
-  color: #fff;
-  font-size: clamp(2.25rem, 8vw, 8.4rem);
-  font-weight: 950;
-  line-height: 0.88;
-  overflow-wrap: anywhere;
-  text-transform: uppercase;
-}
-
-.research-story-hero p {
-  max-width: 760px;
-  color: var(--text-muted);
-  font-size: clamp(1rem, 1.6vw, 1.3rem);
 }
 
 .research-story-frame {
@@ -1802,7 +1775,6 @@ footer {
 
   .research-block,
   .research-story-frame,
-  .research-story-hero,
   .experience-role-card,
   .milestones-section,
   .additional-experience-section,
