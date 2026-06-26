@@ -67,21 +67,7 @@ function toggleAwards() {
   }
 }
 
-function setupAwardsSlider() {
-  const root = document.querySelector("[data-awards-slider]");
-  if (!root) return;
-
-  const cards = Array.from(root.querySelectorAll(".accomplishment-card"));
-  const total = document.querySelector("[data-awards-total]");
-  if (!cards.length || !total) return;
-
-  const format = value => String(value).padStart(2, "0");
-  total.textContent = `(${format(cards.length)})`;
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-  setupAwardsSlider();
-
   document.querySelectorAll(".project-block, .milestones-card").forEach((sliderRoot, index) => {
     if (!sliderRoot.querySelector(".slides")) return;
     const sliderClass = `auto-slider-${index}`;
