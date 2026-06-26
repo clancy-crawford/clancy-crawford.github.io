@@ -615,7 +615,7 @@ section p {
 .project-strip-stage {
   position: relative;
   margin-top: 28px;
-  padding-top: clamp(82px, 13vw, 172px);
+  padding-top: clamp(54px, 5.1vw, 72px);
 }
 
 .highlighted-awards-masthead,
@@ -634,39 +634,46 @@ section p {
   margin: 0;
   color: rgba(255, 123, 170, 0.9);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.6rem, 7.8vw, 9.2rem);
+  font-size: clamp(1.9rem, 7.35vw, 6.6rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.82;
   text-align: center;
   text-shadow: 0 18px 70px rgba(255, 123, 170, 0.18);
   text-transform: none;
+  white-space: nowrap;
 }
 
 .full-awards-heading {
   margin: 0;
   color: rgba(255, 123, 170, 0.9);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(5.8rem, 15.8vw, 18rem);
+  font-size: clamp(3.2rem, 9.7vw, 9.6rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.74;
   text-align: center;
   text-shadow: 0 18px 70px rgba(255, 123, 170, 0.18);
   text-transform: none;
+  white-space: nowrap;
 }
 
 .project-strip-heading {
   margin: 0;
   color: rgba(255, 123, 170, 0.9);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(5rem, 15vw, 17rem);
+  font-size: clamp(3.4rem, 10.8vw, 10.8rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.76;
   text-align: center;
   text-shadow: 0 18px 70px rgba(255, 123, 170, 0.18);
   text-transform: none;
+  white-space: nowrap;
+}
+
+.additional-projects-stage .project-strip-heading {
+  font-size: clamp(3.2rem, 9.5vw, 9.8rem);
 }
 
 .highlighted-awards-slider,
@@ -698,6 +705,10 @@ section p {
   scroll-padding-inline: max(18px, calc((100vw - var(--max-width)) / 2 + 18px));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+}
+
+.full-awards-stage .awards-groups {
+  margin-top: 0;
 }
 
 .highlighted-awards-track:focus-visible,
@@ -778,7 +789,7 @@ section p {
 
 .full-awards-stage {
   margin-top: clamp(56px, 8vw, 102px);
-  padding-top: clamp(112px, 11vw, 170px);
+  padding-top: clamp(68px, 6.4vw, 86px);
 }
 
 .full-awards-stage .awards-group {
@@ -1039,7 +1050,7 @@ section p {
 
 .project-strip-stage {
   margin-top: clamp(52px, 7vw, 92px);
-  padding-top: clamp(112px, 18vw, 226px);
+  padding-top: clamp(70px, 6.5vw, 94px);
 }
 
 .project-strip-track .project-block {
@@ -1389,24 +1400,28 @@ footer {
   .highlighted-awards-stage,
   .full-awards-stage,
   .project-strip-stage {
-    padding-top: clamp(78px, 15vw, 132px);
+    padding-top: clamp(52px, 5.3vw, 66px);
   }
 
   .full-awards-stage,
   .project-strip-stage {
-    padding-top: clamp(112px, 13vw, 156px);
+    padding-top: clamp(64px, 7vw, 82px);
   }
 
   .selected-awards-heading {
-    font-size: clamp(3.1rem, 8.2vw, 6.4rem);
+    font-size: clamp(1.9rem, 7.1vw, 5.6rem);
   }
 
   .full-awards-heading {
-    font-size: clamp(4.8rem, 15vw, 11rem);
+    font-size: clamp(3.1rem, 9.3vw, 8.2rem);
   }
 
   .project-strip-heading {
-    font-size: clamp(4.4rem, 14vw, 10.5rem);
+    font-size: clamp(3.2rem, 10.1vw, 8.7rem);
+  }
+
+  .additional-projects-stage .project-strip-heading {
+    font-size: clamp(3rem, 9vw, 7.8rem);
   }
 
   .highlighted-awards-track .accomplishment-card {
@@ -1496,28 +1511,32 @@ footer {
   }
 
   .highlighted-awards-stage {
-    padding-top: clamp(72px, 22vw, 92px);
+    padding-top: clamp(16px, 4.5vw, 22px);
   }
 
   .full-awards-stage {
-    padding-top: clamp(92px, 28vw, 116px);
+    padding-top: clamp(21px, 6vw, 26px);
   }
 
   .project-strip-stage {
-    padding-top: clamp(94px, 31vw, 130px);
+    padding-top: clamp(20px, 5.8vw, 28px);
   }
 
   .selected-awards-heading {
-    font-size: clamp(2.4rem, 12vw, 3.95rem);
+    font-size: clamp(1.72rem, 7vw, 2.1rem);
     line-height: 0.9;
   }
 
   .full-awards-heading {
-    font-size: clamp(4.1rem, 21vw, 6.6rem);
+    font-size: clamp(2.3rem, 9.8vw, 3.05rem);
   }
 
   .project-strip-heading {
-    font-size: clamp(3.7rem, 20vw, 6.2rem);
+    font-size: clamp(2.5rem, 11.5vw, 3.45rem);
+  }
+
+  .additional-projects-stage .project-strip-heading {
+    font-size: clamp(2.3rem, 10.2vw, 3.2rem);
   }
 
   .highlighted-awards-track,
