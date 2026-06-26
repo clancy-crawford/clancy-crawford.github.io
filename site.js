@@ -53,6 +53,35 @@ function toggleResearch(btn) {
     : btn.innerHTML.replace("\u25BE", "\u25B4");
 }
 
+function setupResearchPanels() {
+  const buttons = document.querySelectorAll("[data-research-target]");
+  const panels = document.querySelectorAll("[data-research-panel]");
+  if (!buttons.length || !panels.length) return;
+
+  function showResearchPanel(target) {
+    buttons.forEach(button => {
+      const active = button.dataset.researchTarget === target;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    panels.forEach(panel => {
+      const active = panel.dataset.researchPanel === target;
+      panel.classList.toggle("active", active);
+      panel.hidden = !active;
+    });
+  }
+
+  buttons.forEach(button => {
+    button.setAttribute("aria-selected", button.classList.contains("active") ? "true" : "false");
+    button.addEventListener("click", () => showResearchPanel(button.dataset.researchTarget));
+  });
+
+  panels.forEach(panel => {
+    panel.hidden = !panel.classList.contains("active");
+  });
+}
+
 function toggleAwards() {
   const fullList = document.getElementById("full-awards");
   const btn = document.querySelector(".expand-awards-btn");
@@ -68,6 +97,8 @@ function toggleAwards() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  setupResearchPanels();
+
   document.querySelectorAll(".project-block, .milestones-card").forEach((sliderRoot, index) => {
     if (!sliderRoot.querySelector(".slides")) return;
     const sliderClass = `auto-slider-${index}`;

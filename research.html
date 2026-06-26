@@ -18,7 +18,7 @@
       <a href="experience.html">Experience</a>
       <a href="projects.html">Projects</a>
       <a class="active" href="research.html">Research</a>
-      <a href="resume.html">Résumé</a>
+      <a href="resume.html">R&eacute;sum&eacute;</a>
       <a href="certifications.html">Certifications</a>
       <a href="awards.html">Accomplishments</a>
     </nav>
@@ -28,94 +28,197 @@
 
     <!-- Research -->
     <section id="research" class="reveal">
-      <div class="research-block">
-        <h2>Research</h2>
+      <h2>Research</h2>
 
-        <p>
-          My research focuses on orbital debris, collision avoidance, risk modeling, and
-          sustainable mission operations.
-        </p>
+      <p>
+        My research interests sit at the intersection of aerospace systems, applied dynamics, numerical
+        modeling, risk analysis, and mission reliability.
+      </p>
 
-        <!-- COLLAPSIBLE RESEARCH BLOCK -->
+      <div class="research-work-picker" aria-label="Research topics">
+        <button class="research-work-button active" type="button" data-research-target="orbital">
+          Orbital Debris and Collision Avoidance in Low Earth Orbit
+        </button>
+        <button class="research-work-button" type="button" data-research-target="magnetic">
+          Magnetic Alignment Dynamics
+        </button>
+      </div>
 
-        <!-- Summary -->
-        <button class="research-toggle" onclick="toggleResearch(this)">Summary ▾</button>
-        <div class="research-content">
+      <div class="research-panel active" data-research-panel="orbital">
+        <div class="research-block">
+          <h2>Orbital Debris and Collision Avoidance in Low Earth Orbit</h2>
+
+          <!-- COLLAPSIBLE RESEARCH BLOCK -->
+
+          <!-- Summary -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Summary &#9662;</button>
+          <div class="research-content">
+            <p>
+              Conducted a comprehensive study on orbital debris growth, tracking limitations,
+              collision risk modeling, and debris mitigation strategies for spacecraft operating
+              in Low Earth Orbit (LEO). Integrated NASA's DRAMA tool, SSA processes, conjunction
+              assessment frameworks, and emerging technologies in autonomous avoidance.
+            </p>
+          </div>
+
+          <!-- Key Findings -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Key Findings &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>LEO debris population is increasing exponentially due to fragmentation events and mega-constellations.
+              </li>
+              <li>Collision risk grows significantly when spacecraft uncertainties overlap ("probability of collision"
+                model).</li>
+              <li>Maneuver planning becomes fuel-limited and time-sensitive when conjunction windows are short.</li>
+              <li>Ground-based laser photon pressure can produce measurable delta-v (~1 cm/s) for debris displacement.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Collision Risk Modeling -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Collision Risk Modeling &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>Used NASA's DRAMA framework to analyze conjunction frequency, atmospheric drag effects, and reentry
+                survivability models.</li>
+              <li>Evaluated covariance-based probability of collision (Pc) using position and velocity uncertainties.</li>
+              <li>Compared threshold Pc values used by NASA and ESA for deciding automatic vs. manual avoidance
+                maneuvers.</li>
+              <li>Analyzed conjunction tables showing severity categories based on kinetic energy and breakup potential.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mitigation Methods -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Mitigation Strategies &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>Case-by-case maneuver planning using delta-v optimization and timeline constraints.</li>
+              <li>Autonomous avoidance using linear programming for fast, low-fuel trajectory adjustments.</li>
+              <li>Laser photon-pressure displacement for pushing small debris off collision paths.</li>
+              <li>ESA debris mitigation practices: passivation, 25-year deorbit rule, fragmentation control.</li>
+            </ul>
+          </div>
+
+          <!-- Downloads -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Downloads &#9662;</button>
+          <div class="research-content">
+            <p>
+              <a
+                href="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_HW3_LaTeX.pdf"
+                target="_blank">Research Report</a>
+            </p>
+            <p>
+              <a
+                href="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_Assignment%203.pptx"
+                target="_blank">Research PowerPoint</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="research-story">
+          <div class="research-story-hero">
+            <div class="research-story-kicker">Presentation / Report</div>
+            <h3>Orbital Debris and Collision Avoidance in Low Earth Orbit</h3>
+            <p>You can flip through the presentation or download it below:</p>
+          </div>
+
+          <div class="research-story-frame">
+            <div class="research-story-copy">
+              <span>Mission Context</span>
+              <h4>Understanding orbital congestion before it becomes mission failure.</h4>
+              <p>
+                The presentation is framed as a research walkthrough: debris growth, uncertainty, conjunction
+                assessment, and mitigation strategies build toward practical collision-avoidance decisions.
+              </p>
+            </div>
+            <div class="research-story-media">
+              <iframe
+                src="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_Assignment%203.pdf">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-panel" data-research-panel="magnetic">
+        <div class="research-block">
+          <h2>Magnetic Alignment Dynamics</h2>
+
           <p>
-            Conducted a comprehensive study on orbital debris growth, tracking limitations,
-            collision risk modeling, and debris mitigation strategies for spacecraft operating
-            in Low Earth Orbit (LEO). Integrated NASA’s DRAMA tool, SSA processes, conjunction
-            assessment frameworks, and emerging technologies in autonomous avoidance.
+            Technical report on magnetic alignment dynamics for a drone payload docking system, developed as
+            a numerical modeling study of connector alignment during payload capture.
           </p>
+
+          <!-- Summary -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Summary &#9662;</button>
+          <div class="research-content">
+            <p>
+              Modeled a two-axis magnetic docking connector for a heavy-lift payload drone using nonlinear
+              rotational differential equations. The study represents pitch and yaw alignment through a
+              ball-joint-style connector model, where magnetic restoring torque pulls the connector toward
+              alignment and damping reduces oscillation during docking.
+            </p>
+          </div>
+
+          <!-- Modeling Approach -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Modeling Approach &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>Developed a two-axis rotational dynamics model for payload connector alignment.</li>
+              <li>Represented magnetic restoring torque as the primary alignment mechanism.</li>
+              <li>Included damping to evaluate settling behavior and reduce overshoot during docking.</li>
+              <li>Used MATLAB-based ODE simulation to study connector response over time.</li>
+            </ul>
+          </div>
+
+          <!-- Key Findings -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Key Findings &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>Magnetic restoring torque can drive passive connector self-alignment in pitch and yaw.</li>
+              <li>Damping is important for reducing oscillatory motion before final payload capture.</li>
+              <li>The simplified dynamics model provides a foundation for future connector geometry and control
+                studies.</li>
+            </ul>
+          </div>
+
+          <!-- Downloads -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Downloads &#9662;</button>
+          <div class="research-content">
+            <p>
+              <a href="Projects/MA442/MA442_Project_ClancyCrawford.pdf" target="_blank" rel="noopener">
+                Magnetic Alignment Dynamics for Drone Payload Docking Report
+              </a>
+            </p>
+          </div>
         </div>
 
-        <!-- Key Findings -->
-        <button class="research-toggle" onclick="toggleResearch(this)">Key Findings ▾</button>
-        <div class="research-content">
-          <ul>
-            <li>LEO debris population is increasing exponentially due to fragmentation events and mega-constellations.
-            </li>
-            <li>Collision risk grows significantly when spacecraft uncertainties overlap (“probability of collision”
-              model).</li>
-            <li>Maneuver planning becomes fuel-limited and time-sensitive when conjunction windows are short.</li>
-            <li>Ground-based laser photon pressure can produce measurable delta-v (~1 cm/s) for debris displacement.
-            </li>
-          </ul>
-        </div>
+        <div class="research-story">
+          <div class="research-story-hero">
+            <div class="research-story-kicker">Presentation / Report</div>
+            <h3>Magnetic Alignment Dynamics</h3>
+            <p>You can view the report here or download it below:</p>
+          </div>
 
-        <!-- Collision Risk Modeling -->
-        <button class="research-toggle" onclick="toggleResearch(this)">Collision Risk Modeling ▾</button>
-        <div class="research-content">
-          <ul>
-            <li>Used NASA’s DRAMA framework to analyze conjunction frequency, atmospheric drag effects, and reentry
-              survivability models.</li>
-            <li>Evaluated covariance-based probability of collision (Pc) using position and velocity uncertainties.</li>
-            <li>Compared threshold Pc values used by NASA and ESA for deciding automatic vs. manual avoidance maneuvers.
-            </li>
-            <li>Analyzed conjunction tables showing severity categories based on kinetic energy and breakup potential.
-            </li>
-          </ul>
+          <div class="research-story-frame">
+            <div class="research-story-copy">
+              <span>Modeling Focus</span>
+              <h4>Connector alignment as a dynamics problem.</h4>
+              <p>
+                The report presents the payload docking connector as a two-axis rotational system, using
+                magnetic restoring torque and damping to study passive alignment behavior during capture.
+              </p>
+            </div>
+            <div class="research-story-media">
+              <iframe src="Projects/MA442/MA442_Project_ClancyCrawford.pdf"></iframe>
+            </div>
+          </div>
         </div>
-
-        <!-- Mitigation Methods -->
-        <button class="research-toggle" onclick="toggleResearch(this)">Mitigation Strategies ▾</button>
-        <div class="research-content">
-          <ul>
-            <li>Case-by-case maneuver planning using delta-v optimization and timeline constraints.</li>
-            <li>Autonomous avoidance using linear programming for fast, low-fuel trajectory adjustments.</li>
-            <li>Laser photon-pressure displacement for pushing small debris off collision paths.</li>
-            <li>ESA debris mitigation practices: passivation, 25-year deorbit rule, fragmentation control.</li>
-          </ul>
-        </div>
-
-        <!-- Presentation Viewer -->
-        <button class="research-toggle" onclick="toggleResearch(this)">Presentation Viewer ▾</button>
-        <div class="research-content">
-          <p>You can flip through the presentation or download it below:</p>
-          <iframe
-            src="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_Assignment%203.pdf">
-          </iframe>
-        </div>
-
-        <!-- Downloads -->
-        <button class="research-toggle" onclick="toggleResearch(this)">Downloads ▾</button>
-        <div class="research-content">
-          <p>
-            <a
-              href="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_HW3_LaTeX.pdf"
-              target="_blank">Research Report</a>
-          </p>
-          <p>
-            <a
-              href="Research/Orbital%20Debris%20and%20Collision%20Avoidance%20in%20Low%20Earth%20Orbit/ClancyCrawford_Assignment%203.pptx"
-              target="_blank">Research PowerPoint</a>
-          </p>
-        </div>
-
       </div>
     </section>
 
-</main>
+  </main>
 
   <footer>
     &copy; 2025 Clancy Crawford. All rights reserved.
