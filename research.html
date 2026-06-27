@@ -42,6 +42,9 @@
         <button class="research-work-button" type="button" data-research-target="magnetic">
           Magnetic Alignment Dynamics
         </button>
+        <button class="research-work-button" type="button" data-research-target="aviation">
+          Causal Analysis of Aviation Accident Lethality
+        </button>
       </div>
 
       <div class="research-panel active" data-research-panel="orbital">
@@ -200,6 +203,87 @@
             </div>
             <div class="research-story-media">
               <iframe src="Projects/MA442/MA442_Project_ClancyCrawford.pdf"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-panel" data-research-panel="aviation">
+        <div class="research-block">
+          <h2>Causal Analysis of Aviation Accident Lethality</h2>
+
+          <p>
+            Research project applying causal discovery and statistical modeling to historical fatal aviation accident
+            data in order to study factors associated with high-lethality outcomes.
+          </p>
+
+          <!-- Summary -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Summary &#9662;</button>
+          <div class="research-content">
+            <p>
+              Analyzed 5,268 fatal aviation accidents from 1908-2009 to identify contributing factors associated with
+              high-lethality outcomes. Converted unstructured crash summaries into structured cause categories using
+              keyword classification, then applied causal discovery techniques to move beyond correlation-based safety
+              analysis.
+            </p>
+          </div>
+
+          <!-- Modeling Approach -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Modeling Approach &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>Used Python to structure accident records and classify narrative summaries into cause categories.</li>
+              <li>Applied FCI causal discovery with chi-square conditional independence testing.</li>
+              <li>Used domain-informed constraints to make the causal graph more realistic for aviation safety analysis.</li>
+              <li>Estimated causal effects using regression-based modeling after the graph discovery stage.</li>
+            </ul>
+          </div>
+
+          <!-- Key Findings -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Key Findings &#9662;</button>
+          <div class="research-content">
+            <ul>
+              <li>Evaluated how factors such as CFIT, weather, military operation status, fuel issues, and mechanical
+                failure influenced accident severity.</li>
+              <li>Used causal graph structure to separate likely directional relationships from simple correlations.</li>
+              <li>Presented the work as a six-person team project combining data cleaning, causal inference, and
+                regression analysis.</li>
+            </ul>
+          </div>
+
+          <!-- Downloads -->
+          <button class="research-toggle" onclick="toggleResearch(this)">Downloads &#9662;</button>
+          <div class="research-content">
+            <p>
+              <a href="Projects/Lethal_Aviation_Accidents/MA413_505_Final_Project_Report.pdf" target="_blank"
+                rel="noopener">
+                Causal Analysis of Aviation Accident Lethality Report
+              </a>
+            </p>
+            <p>
+              <a href="Projects/Lethal_Aviation_Accidents/MA_505_Final_Presentation.pptx" target="_blank"
+                rel="noopener">
+                Causal Analysis of Aviation Accident Lethality Presentation
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="research-story">
+          <div class="research-story-frame">
+            <div class="research-story-copy">
+              <span>Causal Inference</span>
+              <h4>Moving beyond correlation in aviation safety analysis.</h4>
+              <p>
+                The presentation frames accident lethality as a causal modeling problem, using structured historical data,
+                graph discovery, and regression-based effect estimates to evaluate risk factors in fatal aviation
+                accidents.
+              </p>
+            </div>
+            <div class="research-story-media">
+              <iframe
+                src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fclancy-crawford.github.io%2FProjects%2FLethal_Aviation_Accidents%2FMA_505_Final_Presentation.pptx">
+              </iframe>
             </div>
           </div>
         </div>
