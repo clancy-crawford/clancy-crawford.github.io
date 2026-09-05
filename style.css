@@ -345,11 +345,6 @@ section h2 {
   text-transform: uppercase;
 }
 
-#accomplishments h2 {
-  max-width: none;
-  font-size: clamp(2.35rem, 6.7vw, 6.1rem);
-}
-
 section h2 + p,
 .accomplishment-intro {
   max-width: 100%;
@@ -1453,10 +1448,12 @@ footer {
   display: none;
 }
 
+.resume-page main,
 .certifications-page main {
-  padding-bottom: 24px;
+  padding: clamp(28px, 4vw, 48px) 0 24px;
 }
 
+.resume-page #resume,
 .certifications-page #certifications {
   margin-bottom: 0;
 }
@@ -1520,7 +1517,7 @@ footer {
 }
 
 .project-index li::marker {
-  color: var(--coral);
+  color: #fff;
   font-weight: 800;
 }
 
@@ -1532,6 +1529,10 @@ footer {
   max-width: none;
   width: 100%;
   font-size: clamp(2rem, 9.5vw, 9.8rem);
+}
+
+.projects-page .project-strip-stage {
+  margin-top: 24px;
 }
 
 .projects-page .project-strip-track .project-content {
@@ -1547,6 +1548,114 @@ footer {
 
 .projects-page .project-strip-track .project-block {
   min-height: 540px;
+}
+
+/* Accomplishments share the project cards' compact typography and spacing. */
+.awards-page main {
+  padding: clamp(28px, 4vw, 48px) 0 24px;
+}
+
+.awards-page #accomplishments {
+  margin-bottom: 24px;
+}
+
+.awards-page #full-accomplishments {
+  margin-bottom: 0;
+  padding-top: 24px;
+}
+
+.awards-page .highlighted-awards-stage,
+.awards-page .full-awards-stage {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.awards-page .highlighted-awards-masthead,
+.awards-page .full-awards-masthead {
+  position: static;
+  width: 100%;
+  margin-bottom: 16px;
+  transform: none;
+}
+
+.awards-page .selected-awards-heading,
+.awards-page .full-awards-heading {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(1.5rem, 6.5vw, 6.6rem);
+  line-height: 1;
+  text-align: left;
+}
+
+.awards-page .highlighted-awards-track .accomplishment-card,
+.awards-page .full-awards-stage .awards-group {
+  min-height: 0;
+  padding: clamp(18px, 2vw, 26px);
+}
+
+.awards-page .highlighted-awards-track .evidence-preview {
+  width: 100%;
+  margin: 0 auto 10px;
+  flex-shrink: 0;
+}
+
+.awards-page .evidence-preview img {
+  object-fit: contain;
+}
+
+.awards-page .highlighted-awards-track .accomplishment-kicker {
+  min-height: 0;
+  padding-bottom: 8px;
+}
+
+.awards-page .highlighted-awards-track h3 {
+  margin-top: 12px;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.15;
+}
+
+.awards-page .highlighted-awards-track .evidence-links {
+  margin-top: 12px;
+}
+
+.awards-page .full-awards-stage .awards-groups {
+  align-items: flex-start;
+}
+
+.awards-page .full-awards-stage .award-header {
+  min-height: 0;
+  padding-bottom: 10px;
+}
+
+.awards-page .full-awards-stage .awards-list {
+  margin-top: 12px;
+}
+
+.awards-page .full-awards-stage .awards-list li {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.awards-page .full-awards-stage .awards-list li:last-child {
+  margin-bottom: 0;
+}
+
+.awards-page .full-awards-stage .awards-list li::before {
+  display: block;
+}
+
+.awards-page .linked-awards-list a {
+  white-space: nowrap;
+}
+
+/* Keep only the space needed for each project's number above its image. */
+.projects-page .project-block::before {
+  top: 12px;
+}
+
+.projects-page .project-strip-track .project-image-wrap {
+  margin-top: 40px;
 }
 
 .mouse-scrollable {
@@ -1705,6 +1814,12 @@ footer {
 }
 
 /* Home page annotation updates. */
+.home-page .hero {
+  min-height: auto;
+  padding: clamp(28px, 4vw, 48px) 0 48px;
+  align-items: start;
+}
+
 .home-page .hero-kicker {
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   letter-spacing: 0.08em;
@@ -1745,6 +1860,10 @@ footer {
 .home-page .research-block {
   margin-top: 0;
   padding: clamp(18px, 2vw, 28px);
+}
+
+.home-page .research-block h2 {
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
 }
 
 .home-page .research-block p,
@@ -1967,10 +2086,6 @@ footer {
 
   .research-block h2 {
     font-size: clamp(1.35rem, 7vw, 2.2rem);
-  }
-
-  #accomplishments h2 {
-    font-size: clamp(2rem, 10.5vw, 3.35rem);
   }
 
   .experience-teams,
