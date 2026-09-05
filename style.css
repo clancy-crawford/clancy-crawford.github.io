@@ -1438,6 +1438,29 @@ footer {
   text-transform: uppercase;
 }
 
+/* Resume details sit beneath their Education and Leadership labels. */
+.resume-page .resume-details {
+  list-style: none;
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.resume-page .resume-details li {
+  padding-left: 0;
+}
+
+.resume-page .resume-details li::before {
+  display: none;
+}
+
+.certifications-page main {
+  padding-bottom: 24px;
+}
+
+.certifications-page #certifications {
+  margin-bottom: 0;
+}
+
 /* Research matches the compact Experience page heading and spacing. */
 .research-page main {
   padding: clamp(28px, 4vw, 48px) 0 24px;
