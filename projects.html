@@ -9,7 +9,7 @@
   <script src="site.js" defer></script>
 </head>
 
-<body>
+<body class="projects-page">
 
   <header class="page-header">
     <!-- NAVIGATION -->
@@ -32,23 +32,24 @@
 
         <div class="project-link-card">
           <h3>Featured Projects</h3>
-          <div class="project-jump-list">
-            <a href="#avionics-box">Avionics Box Structural &amp; Thermal Analysis</a>
-            <a href="#experimental-aerodynamics">Experimental Aerodynamics &amp; Wind Tunnel Analysis</a>
-            <a href="#aviation-causal-analysis">Causal Analysis of Aviation Accident Lethality</a>
-            <a href="#fuel-grinder">Fuel Grinder – Rocket Prometheus</a>
-          </div>
+          <ol class="project-index" start="1">
+            <li><a href="#magnetic-alignment">Magnetic Alignment Dynamics for Drone Payload Docking</a></li>
+            <li><a href="#avionics-box">Avionics Box Structural &amp; Thermal Analysis</a></li>
+            <li><a href="#experimental-aerodynamics">Experimental Aerodynamics &amp; Wind Tunnel Analysis</a></li>
+            <li><a href="#aviation-causal-analysis">Causal Analysis of Aviation Accident Lethality</a></li>
+            <li><a href="#fuel-grinder">Fuel Grinder – Rocket Prometheus</a></li>
+          </ol>
         </div>
 
         <div class="project-link-card">
           <h3>Additional Projects</h3>
-          <div class="project-jump-list">
-            <a href="#numerical-odes">Numerical Methods for ODEs</a>
-            <a href="#projectile-launcher">Projectile Launcher</a>
-            <a href="#bridge-design">Basswood Bridge Design</a>
-            <a href="#matlab-tracker">MATLAB Fitness Tracker</a>
-            <a href="#makeup-stand">Travel Magnetic Makeup Brush Stand</a>
-          </div>
+          <ol class="project-index" start="6">
+            <li><a href="#numerical-odes">Numerical Methods for ODEs</a></li>
+            <li><a href="#projectile-launcher">Projectile Launcher</a></li>
+            <li><a href="#bridge-design">Basswood Bridge Design</a></li>
+            <li><a href="#matlab-tracker">MATLAB Fitness Tracker</a></li>
+            <li><a href="#makeup-stand">Travel Magnetic Makeup Brush Stand</a></li>
+          </ol>
         </div>
 
       </div>
@@ -58,7 +59,7 @@
           <h2 class="project-strip-heading">Featured Projects</h2>
         </div>
         <div class="project-strip-slider" aria-label="Featured projects">
-        <div class="project-strip-track" tabindex="0">
+        <div class="project-strip-track" tabindex="0" role="region" aria-label="Featured project cards">
 
       <!-- Modeling Magnetic Alignment Dynamics in a Drone Payload Docking System -->
       <div id="magnetic-alignment" class="project-block reveal magnetic_alignment-slider">
@@ -73,7 +74,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">Numerical Modeling · MATLAB</div>
           <div class="project-title">Magnetic Alignment Dynamics for Drone Payload Docking Report</div>
           <p class="project-desc">
             Modeled a two-axis magnetic docking connector for a heavy-lift payload drone using nonlinear rotational
@@ -109,7 +109,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">Structural · Thermal Modeling · SOLIDWORKS</div>
           <div class="project-title">Avionics Box Structural &amp; Thermal Analysis</div>
           <p class="project-desc">
             Analyzed an aircraft avionics box support structure across multiple flight conditions (takeoff, cruise up to
@@ -159,7 +158,6 @@
         </div>
 
         <div class="project-content">
-          <div class="project-kicker">Experimental Aerodynamics · Wind Tunnel Testing · MATLAB</div>
           <div class="project-title">Experimental Aerodynamics & Wind Tunnel Analysis</div>
           
           <p class="project-desc">
@@ -207,7 +205,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">Causal Inference · Data Modeling · Python</div>
           <div class="project-title">Causal Analysis of Aviation Accident Lethality</div>
           <p class="project-desc">
             Analyzed 5,268 fatal aviation accidents from 1908–2009 to identify contributing factors associated with
@@ -250,7 +247,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">SOLIDWORKS · Propulsion Support</div>
           <div class="project-title">Fuel Grinder – Rocket Prometheus (ERFSEDS)</div>
           <p class="project-desc">
             Collaborated with ERFSEDS teammates to design a fuel grinding mechanism for
@@ -273,7 +269,7 @@
           <h2 class="project-strip-heading">Additional Projects</h2>
         </div>
         <div class="project-strip-slider" aria-label="Additional projects">
-        <div class="project-strip-track" tabindex="0">
+        <div class="project-strip-track" tabindex="0" role="region" aria-label="Additional project cards">
 
 
       <!-- Numerical Methods Plot -->
@@ -283,7 +279,6 @@
             alt="Numerical methods solution plot">
         </div>
         <div class="project-content">
-          <div class="project-kicker">Numerical Methods · ODEs</div>
           <div class="project-title">Numerical Methods for Ordinary Differential Equations</div>
           <p class="project-desc">
             Implemented and compared numerical methods for solving ordinary differential
@@ -322,7 +317,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">Dynamics · Prototyping</div>
           <div class="project-title">Projectile Launcher</div>
           <p class="project-desc">
             Designed and built a mechanical launcher to maximize range for a baseball.
@@ -379,7 +373,6 @@
           <img src="Projects/Best_Images/Bridge/Bridge.jpg" alt="Basswood bridge under test">
         </div>
         <div class="project-content">
-          <div class="project-kicker">Structures ·Prototyping </div>
           <div class="project-title">Basswood Bridge Design</div>
           <p class="project-desc">
             Constructed a basswood bridge under strict design constraints, targeting the
@@ -410,7 +403,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">MATLAB · Data Visualization</div>
           <div class="project-title">MATLAB Fitness Progress Tracker</div>
           <p class="project-desc">
             Developed a MATLAB tool to track workouts, diet plans, and body measurements
@@ -451,7 +443,6 @@
           <div class="dots"></div>
         </div>
         <div class="project-content">
-          <div class="project-kicker">CATIA · Product Design</div>
           <div class="project-title">Travel Magnetic Makeup Brush Stand</div>
           <p class="project-desc">
             Designed a compact, travel-friendly magnetic brush stand featuring 13+ unique

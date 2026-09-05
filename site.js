@@ -96,7 +96,73 @@ function toggleAwards() {
   }
 }
 
+function setupMouseScrolling() {
+  const tracks = document.querySelectorAll(
+    ".project-strip-track, .highlighted-awards-track, .full-awards-stage .awards-groups"
+  );
+
+  tracks.forEach(track => {
+    track.classList.add("mouse-scrollable");
+    let drag = null;
+    let suppressClick = false;
+
+    track.addEventListener("wheel", event => {
+      if (event.ctrlKey || event.shiftKey || Math.abs(event.deltaX) >= Math.abs(event.deltaY)) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 0) return;
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
+      const next = Math.max(0, Math.min(maxScroll, track.scrollLeft + event.deltaY * unit));
+      // Let the page scroll normally when the row reaches either end.
+      if (Math.abs(next - track.scrollLeft) < 1) return;
+      event.preventDefault();
+      track.scrollTo({ left: next, behavior: "instant" });
+    }, { passive: false });
+
+    track.addEventListener("pointerdown", event => {
+      suppressClick = false;
+      if (event.pointerType !== "mouse" || event.button !== 0 ||
+          event.target.closest("a, button, input, select, textarea, video, .dots")) return;
+      drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft, moved: false };
+    });
+
+    track.addEventListener("pointermove", event => {
+      if (!drag || drag.id !== event.pointerId) return;
+      const distance = event.clientX - drag.x;
+      if (!drag.moved && Math.abs(distance) < 6) return;
+      if (!drag.moved) {
+        drag.moved = true;
+        track.setPointerCapture(event.pointerId);
+        track.classList.add("is-dragging");
+      }
+      event.preventDefault();
+      track.scrollTo({ left: drag.scroll - distance, behavior: "instant" });
+    });
+
+    function finishDrag() {
+      if (!drag) return;
+      suppressClick = drag.moved;
+      drag = null;
+      track.classList.remove("is-dragging");
+    }
+
+    track.addEventListener("pointerup", finishDrag);
+    track.addEventListener("pointercancel", finishDrag);
+    track.addEventListener("lostpointercapture", finishDrag);
+    track.addEventListener("pointerleave", () => {
+      if (drag && !drag.moved) finishDrag();
+    });
+    track.addEventListener("dragstart", event => event.preventDefault());
+    track.addEventListener("click", event => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClick = false;
+    }, true);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  setupMouseScrolling();
   setupResearchPanels();
 
   document.querySelectorAll(".project-block, .milestones-card").forEach((sliderRoot, index) => {

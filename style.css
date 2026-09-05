@@ -1438,6 +1438,82 @@ footer {
   text-transform: uppercase;
 }
 
+/* Projects use a compact index and consistent card typography. */
+.projects-page main {
+  padding: clamp(28px, 4vw, 48px) 0 24px;
+}
+
+.projects-page #projects {
+  margin-bottom: 0;
+}
+
+.projects-page .project-link-groups {
+  margin-top: 0;
+}
+
+.project-index {
+  margin-top: 12px;
+  padding-left: 28px;
+  list-style-type: decimal-leading-zero;
+  font-size: 0.98rem;
+}
+
+.project-index li {
+  padding-left: 4px;
+  margin-bottom: 6px;
+}
+
+.project-index li::marker {
+  color: var(--coral);
+  font-weight: 800;
+}
+
+.projects-page .project-block::before {
+  content: "(" counter(project-card, decimal-leading-zero) ")";
+}
+
+.projects-page .project-strip-stage .project-strip-heading {
+  max-width: none;
+  width: 100%;
+  font-size: clamp(2rem, 9.5vw, 9.8rem);
+}
+
+.projects-page .project-strip-track .project-content {
+  margin-top: 18px;
+  padding: clamp(18px, 2vw, 26px);
+}
+
+.projects-page .project-strip-track .project-title {
+  margin-top: 0;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.15;
+}
+
+.projects-page .project-strip-track .project-block {
+  min-height: 540px;
+}
+
+.mouse-scrollable {
+  cursor: grab;
+}
+
+.mouse-scrollable.is-dragging,
+.mouse-scrollable.is-dragging * {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.mouse-scrollable.is-dragging {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+@media (pointer: fine) {
+  .mouse-scrollable.mouse-scrollable {
+    scroll-snap-type: none;
+  }
+}
+
 /* Compact Experience page and nested Mayott milestones. */
 .experience-page main {
   padding: clamp(28px, 4vw, 48px) 0 24px;
