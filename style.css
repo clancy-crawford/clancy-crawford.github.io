@@ -1438,6 +1438,39 @@ footer {
   text-transform: uppercase;
 }
 
+/* Research matches the compact Experience page heading and spacing. */
+.research-page main {
+  padding: clamp(28px, 4vw, 48px) 0 24px;
+}
+
+.research-page #research {
+  margin-bottom: 0;
+}
+
+.research-page #research > h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.research-page .research-block h2 {
+  max-width: none;
+  font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.research-page .research-story-copy h4 {
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  line-height: 1.12;
+}
+
+.research-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 28px;
+  font-size: 0.98rem;
+}
+
 /* Projects use a compact index and consistent card typography. */
 .projects-page main {
   padding: clamp(28px, 4vw, 48px) 0 24px;
