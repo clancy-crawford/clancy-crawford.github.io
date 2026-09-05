@@ -1438,6 +1438,140 @@ footer {
   text-transform: uppercase;
 }
 
+/* Compact Experience page and nested Mayott milestones. */
+.experience-page main {
+  padding: clamp(28px, 4vw, 48px) 0 24px;
+}
+
+.experience-page #experience {
+  margin-bottom: 0;
+}
+
+.experience-page #experience > h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.experience-page .experience-title {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  line-height: 1.2;
+}
+
+.experience-page .milestones-section {
+  margin-top: 24px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 20px 0 0;
+  background: none;
+  box-shadow: none;
+}
+
+.experience-page .milestones-heading,
+.experience-page .section-subheading {
+  margin-top: 0;
+}
+
+.milestone-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 6px;
+  margin: 16px 0 22px;
+  padding-left: 18px;
+  font-size: 0.94rem;
+}
+
+.milestone-index li::marker {
+  color: var(--coral);
+}
+
+.milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.experience-page .milestones-card {
+  min-width: 0;
+  margin-top: 0;
+  scroll-margin-top: 20px;
+}
+
+.experience-page .milestones-content {
+  padding: 20px;
+}
+
+.experience-page .milestones-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+}
+
+.experience-page .milestones-title {
+  margin: 10px 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  line-height: 1.2;
+}
+
+.experience-page .milestones-desc {
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.experience-page .milestones-media,
+.experience-page .milestones-links {
+  padding: 0 20px 20px;
+}
+
+.milestone-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.milestone-gallery a {
+  display: block;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-ink);
+}
+
+.milestone-gallery a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+.milestone-gallery img {
+  display: block;
+  width: 100%;
+  height: clamp(120px, 13vw, 190px);
+  object-fit: contain;
+}
+
+.experience-page .section-support {
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .milestone-index,
+  .milestone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-page .milestones-content {
+    padding: 16px;
+  }
+
+  .experience-page .milestones-media,
+  .experience-page .milestones-links {
+    padding: 0 16px 16px;
+  }
+
+}
+
 /* Home page annotation updates. */
 .home-page .hero-kicker {
   font-size: clamp(1rem, 1.4vw, 1.25rem);
