@@ -1438,6 +1438,63 @@ footer {
   text-transform: uppercase;
 }
 
+/* Home page annotation updates. */
+.home-page .hero-kicker {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  letter-spacing: 0.08em;
+}
+
+.home-page .hero h1 {
+  white-space: normal;
+}
+
+.home-page .hero-sub span {
+  white-space: normal;
+}
+
+.home-page .hero-sub time {
+  white-space: nowrap;
+}
+
+.home-page .qr-block {
+  grid-template-columns: 1fr auto;
+  border-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  padding-top: 0;
+  padding-bottom: 14px;
+}
+
+.home-page main {
+  display: grid;
+  gap: 20px;
+  padding: 24px 0;
+}
+
+.home-page main > section {
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.home-page .research-block {
+  margin-top: 0;
+  padding: clamp(18px, 2vw, 28px);
+}
+
+.home-page .research-block p,
+.home-page #contact .list li {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 520;
+}
+
+.home-page #contact .list {
+  overflow-wrap: anywhere;
+}
+
+.home-page #contact .list li:last-child {
+  margin-bottom: 0;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(26px);
