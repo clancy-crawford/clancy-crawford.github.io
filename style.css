@@ -1433,6 +1433,11 @@ footer {
   text-transform: uppercase;
 }
 
+footer > a:not(.back-to-top) {
+  display: inline-block;
+  margin-left: 12px;
+}
+
 .back-to-top {
   display: block;
   width: fit-content;
