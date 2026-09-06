@@ -1,3 +1,51 @@
+const CLICK_NOTIFICATION_URL = "https://portfolio-click-notifications.ckcrawford963.workers.dev/";
+
+function setupClickNotifications() {
+  // Local previews should not send real activity alerts.
+  if (window.location.origin !== "https://clancy-crawford.github.io") return;
+  const recentClicks = new Map();
+  document.querySelectorAll("a[href]").forEach(link => {
+    let destination;
+    try { destination = new URL(link.href, window.location.href); } catch (_) { return; }
+    let action;
+    if (link.hasAttribute("data-resume-notify") && link.hasAttribute("download")) {
+      action = "Resume Download";
+    } else if (destination.protocol === "mailto:") {
+      action = "Email Click";
+    } else if (destination.protocol === "https:" &&
+        ["linkedin.com", "www.linkedin.com"].includes(destination.hostname)) {
+      action = "LinkedIn Click";
+    } else if (destination.protocol === "https:" && destination.hostname === "github.com") {
+      action = "GitHub Click";
+    } else {
+      return;
+    }
+
+    function notify(event) {
+      if (event.defaultPrevented || (event.type === "auxclick" && event.button !== 1)) return;
+      // Preserve native downloads, new tabs, keyboard activation, and email links.
+      try {
+        const key = `${action}:${destination.pathname}`;
+        const now = Date.now();
+        if (recentClicks.has(key) && now - recentClicks.get(key) < 10000) return;
+        recentClicks.set(key, now);
+        const body = JSON.stringify({ action, page: window.location.pathname });
+        fetch(CLICK_NOTIFICATION_URL, {
+          method: "POST",
+          // The Worker parses JSON; text/plain avoids a preflight during navigation.
+          headers: { "Content-Type": "text/plain;charset=UTF-8" },
+          body,
+          keepalive: true,
+          credentials: "omit",
+          referrerPolicy: "no-referrer"
+        }).catch(() => {});
+      } catch (_) {}
+    }
+    link.addEventListener("click", notify);
+    link.addEventListener("auxclick", notify);
+  });
+}
+
 function setupSlider(selector) {
   const root = document.querySelector(selector);
   if (!root) return;
@@ -162,6 +210,7 @@ function setupMouseScrolling() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  setupClickNotifications();
   setupMouseScrolling();
   setupResearchPanels();
 
