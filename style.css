@@ -1035,8 +1035,12 @@ section p {
   margin-bottom: 34px;
 }
 
-.project-link-card h3 {
+.project-link-card h3,
+.project-index li::marker {
   color: #ffddea;
+}
+
+.project-link-card h3 {
   font-size: 0.9rem;
   font-weight: 900;
   letter-spacing: 0.11em;
@@ -1429,6 +1433,15 @@ footer {
   text-transform: uppercase;
 }
 
+.back-to-top {
+  display: block;
+  width: fit-content;
+  margin: 10px auto 0;
+  padding: 6px 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* Resume details sit beneath their Education and Leadership labels. */
 .resume-page .resume-details {
   list-style: none;
@@ -1513,7 +1526,6 @@ footer {
 }
 
 .project-index li::marker {
-  color: #fff;
   font-weight: 800;
 }
 
