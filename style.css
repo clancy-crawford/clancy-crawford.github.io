@@ -2300,14 +2300,5 @@ footer > a:not(.back-to-top) {
   line-height: 1.7;
   overflow-wrap: anywhere;
 }
-.legal-page main a, .portfolio-use-notice a { text-decoration: underline; }
-.portfolio-use-notice {
-  border-left: 3px solid var(--link);
-  background: var(--surface);
-  padding: 16px 20px;
-  margin-bottom: 28px;
-  color: var(--text-muted);
-}
-.portfolio-use-notice p { max-width: 90ch; font-size: 0.95rem; line-height: 1.6; }
-.portfolio-use-notice p + p { margin-top: 12px; }
+.legal-page main a { text-decoration: underline; }
 footer > a:not(.back-to-top) { padding-top: 8px; padding-bottom: 8px; }
