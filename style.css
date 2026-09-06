@@ -2271,3 +2271,43 @@ footer > a:not(.back-to-top) {
     min-height: 430px;
   }
 }
+
+/* Keep policy pages readable without JavaScript or entrance animations. */
+.legal-page main {
+  width: min(880px, calc(100% - 32px));
+  padding: clamp(28px, 5vw, 56px) 0;
+}
+.legal-page section {
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.legal-page .research-block { margin-top: 0; }
+.legal-page h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.legal-page .research-block h2 {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin: 28px 0 10px;
+  text-transform: none;
+}
+.legal-page .research-block p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.legal-page main a, .portfolio-use-notice a { text-decoration: underline; }
+.portfolio-use-notice {
+  border-left: 3px solid var(--link);
+  background: var(--surface);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  color: var(--text-muted);
+}
+.portfolio-use-notice p { max-width: 90ch; font-size: 0.95rem; line-height: 1.6; }
+.portfolio-use-notice p + p { margin-top: 12px; }
+footer > a:not(.back-to-top) { padding-top: 8px; padding-bottom: 8px; }
