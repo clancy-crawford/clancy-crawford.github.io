@@ -1525,12 +1525,6 @@ footer {
   content: "(" counter(project-card, decimal-leading-zero) ")";
 }
 
-.projects-page .project-strip-stage .project-strip-heading {
-  max-width: none;
-  width: 100%;
-  font-size: clamp(2rem, 9.5vw, 9.8rem);
-}
-
 .projects-page .project-strip-stage {
   margin-top: 24px;
 }
@@ -1567,24 +1561,35 @@ footer {
 .awards-page .highlighted-awards-stage,
 .awards-page .full-awards-stage {
   margin-top: 0;
-  padding-top: 0;
 }
 
+/* Every collection title uses the same inset, scale, and overlap behind cards. */
+.projects-page .project-strip-stage,
+.awards-page .highlighted-awards-stage,
+.awards-page .full-awards-stage {
+  --collection-title-size: clamp(1.25rem, 6vw, 6rem);
+  padding-top: calc(var(--collection-title-size) * 0.65);
+}
+
+.projects-page .project-strip-masthead,
 .awards-page .highlighted-awards-masthead,
 .awards-page .full-awards-masthead {
-  position: static;
-  width: 100%;
-  margin-bottom: 16px;
-  transform: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(80vw, 1280px);
+  margin: 0;
+  transform: translateX(-50%);
 }
 
+.projects-page .project-strip-stage .project-strip-heading,
 .awards-page .selected-awards-heading,
 .awards-page .full-awards-heading {
   width: 100%;
   max-width: none;
   margin: 0;
-  font-size: clamp(1.5rem, 6.5vw, 6.6rem);
-  line-height: 1;
+  font-size: var(--collection-title-size);
+  line-height: 0.76;
   text-align: left;
 }
 
