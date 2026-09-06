@@ -49,19 +49,28 @@
           <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.
         </p>
 
-        <h2>Link Activity Notifications</h2>
+        <h2>Page Views and Link Activity</h2>
         <p>
-          When you click a résumé download, email, LinkedIn, or GitHub link, this website sends
-          the action name and current page path to a Cloudflare Worker. The Worker sends me a
-          Telegram notification containing that information and the date and time. These alerts
-          record clicks; they do not confirm completed downloads, sent emails, or activity on
-          LinkedIn or GitHub.
+          When you view a page or click a résumé download, email, LinkedIn, or GitHub link, this
+          website sends the action name, current page path, application reference code (if present),
+          and referring page address (if provided by your browser) to a Cloudflare Worker. The Worker
+          logs the activity in my Google Sheets activity log and sends me a Telegram notification.
+          These records include the date and time and, when the reference code matches an application,
+          the associated company and position. Click records do not confirm completed downloads,
+          sent emails, or activity on LinkedIn or GitHub.
         </p>
         <p>
-          The notification code does not use cookies or persistent browser storage, and does not
-          include your email address, IP address, or referring website in the notification payload.
-          Cloudflare receives your IP address as part of handling the network request. Telegram
-          processes the notification message to deliver it to me. See
+          Application links may include a <code>ref</code> code. This website stores that code in
+          your browser tab's session storage so subsequent page views and tracked clicks retain
+          the same reference as you browse. Session storage normally clears when the tab closes.
+          This tracking code does not use cookies. A reference identifies the application link
+          used to reach the site; it does not verify who opened it.
+        </p>
+        <p>
+          The notification payload does not include your email address or IP address. Cloudflare
+          receives your IP address as part of handling the network request. Google processes the
+          activity log, and Telegram processes the notification message to deliver it to me. See
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and
           <a href="https://telegram.org/privacy" target="_blank" rel="noopener">Telegram's Privacy Policy</a>.
         </p>
 

@@ -1,8 +1,42 @@
-const CLICK_NOTIFICATION_URL = "https://portfolio-click-notifications.ckcrawford963.workers.dev/";
+const PORTFOLIO_EVENT_URL = "https://portfolio-click-notifications.ckcrawford963.workers.dev/";
 
-function setupClickNotifications() {
+function setupPortfolioNotifications() {
   // Local previews should not send real activity alerts.
   if (window.location.origin !== "https://clancy-crawford.github.io") return;
+
+  let portfolioRef = new URLSearchParams(window.location.search).get("ref") || "";
+  try {
+    if (portfolioRef) {
+      window.sessionStorage.setItem("portfolioRef", portfolioRef);
+    } else {
+      portfolioRef = window.sessionStorage.getItem("portfolioRef") || "";
+    }
+  } catch (_) {
+    // Keep the incoming ref usable even when browser storage is unavailable.
+  }
+
+  function sendPortfolioEvent(action) {
+    try {
+      const body = JSON.stringify({
+        action,
+        page: window.location.pathname,
+        ref: portfolioRef,
+        referrer: document.referrer || ""
+      });
+      fetch(PORTFOLIO_EVENT_URL, {
+        method: "POST",
+        // The Worker parses JSON; text/plain avoids a preflight during navigation.
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body,
+        keepalive: true,
+        credentials: "omit",
+        referrerPolicy: "no-referrer"
+      }).catch(() => {});
+    } catch (_) {}
+  }
+
+  sendPortfolioEvent("Page View");
+
   const recentClicks = new Map();
   document.querySelectorAll("a[href]").forEach(link => {
     let destination;
@@ -29,16 +63,7 @@ function setupClickNotifications() {
         const now = Date.now();
         if (recentClicks.has(key) && now - recentClicks.get(key) < 10000) return;
         recentClicks.set(key, now);
-        const body = JSON.stringify({ action, page: window.location.pathname });
-        fetch(CLICK_NOTIFICATION_URL, {
-          method: "POST",
-          // The Worker parses JSON; text/plain avoids a preflight during navigation.
-          headers: { "Content-Type": "text/plain;charset=UTF-8" },
-          body,
-          keepalive: true,
-          credentials: "omit",
-          referrerPolicy: "no-referrer"
-        }).catch(() => {});
+        sendPortfolioEvent(action);
       } catch (_) {}
     }
     link.addEventListener("click", notify);
@@ -210,7 +235,7 @@ function setupMouseScrolling() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  setupClickNotifications();
+  setupPortfolioNotifications();
   setupMouseScrolling();
   setupResearchPanels();
 
