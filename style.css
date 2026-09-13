@@ -2301,4 +2301,208 @@ footer > a:not(.back-to-top) {
   overflow-wrap: anywhere;
 }
 .legal-page main a { text-decoration: underline; }
+
+/* Cislunar project feature and dedicated project page. */
+#featured-design,
+#cislunar-transportation,
+.cislunar-page .cislunar-intro {
+  padding-top: 0;
+  border-top: 0;
+}
+
+#cislunar-transportation { margin-bottom: 44px; }
+
+.cislunar-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(177, 42, 74, 0.23), transparent 60%),
+    linear-gradient(120deg, #1c101e, #0b0710);
+  box-shadow: var(--shadow);
+}
+
+.cislunar-feature-copy { padding: clamp(24px, 3.5vw, 50px); }
+
+.cislunar-eyebrow {
+  margin-bottom: 16px;
+  color: var(--soft-rose);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cislunar-feature h2,
+.cislunar-feature h1 {
+  margin: 0 0 22px;
+  font-size: clamp(2rem, 3.5vw, 3.55rem);
+  font-weight: 850;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  overflow-wrap: normal;
+}
+
+.cislunar-feature .cislunar-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.cislunar-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 224, 138, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 224, 138, 0.07);
+  color: var(--link);
+  font-weight: 700;
+}
+
+.cislunar-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.cislunar-feature .cislunar-summary {
+  max-width: 62ch;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 450;
+  line-height: 1.7;
+}
+
+.cislunar-phase { margin: 18px 0 24px; }
+.cislunar-phase strong { color: #fff; }
+.cislunar-feature .btn { gap: 16px; }
+
+.cislunar-feature-art {
+  min-width: 0;
+  margin: 0;
+  padding: 12px 24px 30px;
+  text-align: center;
+}
+
+.cislunar-feature-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cislunar-feature-art span,
+.cislunar-feature-art figcaption {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.cislunar-page main { padding-top: 28px; }
+.cislunar-back { display: inline-block; margin-bottom: 24px; padding: 8px 0; }
+.cislunar-page section { margin-bottom: 52px; }
+.cislunar-page section:last-child { margin-bottom: 0; }
+
+.cislunar-page section > h2,
+.cislunar-page .cislunar-overview h2,
+.cislunar-page .cislunar-next h2 {
+  margin-bottom: 22px;
+  font-size: clamp(1.65rem, 2.7vw, 2.6rem);
+  line-height: 1.15;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  overflow-wrap: normal;
+}
+
+.cislunar-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(24px, 5vw, 72px);
+  padding-top: 28px;
+}
+
+.cislunar-prose p,
+.cislunar-next p:not(.cislunar-eyebrow) { font-size: 1.05rem; line-height: 1.75; }
+.cislunar-prose p + p,
+.cislunar-next p + p { margin-top: 14px; }
+
+.cislunar-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.cislunar-page .cislunar-work-intro {
+  max-width: 82ch;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.cislunar-work-card {
+  padding: clamp(24px, 2.8vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.cislunar-work-card .cislunar-card-label {
+  color: var(--soft-rose);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cislunar-work-card h3 { margin: 16px 0 12px; font-size: 1.25rem; line-height: 1.35; }
+.cislunar-work-card p { line-height: 1.7; }
+
+.cislunar-page .cislunar-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(24px, 3.5vw, 44px);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: linear-gradient(120deg, rgba(255, 123, 170, 0.08), transparent);
+}
+
+.cislunar-next > div { max-width: 82ch; }
+.cislunar-next .btn { flex-shrink: 0; gap: 16px; }
+.cislunar-page a:focus-visible,
+.cislunar-feature a:focus-visible { outline: 2px solid var(--link); outline-offset: 5px; }
+
+@media (max-width: 1000px) {
+  .cislunar-work-grid { grid-template-columns: 1fr; }
+  .cislunar-page .cislunar-next { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 720px) {
+  .cislunar-feature,
+  .cislunar-overview,
+  .cislunar-work-grid { grid-template-columns: 1fr; }
+  .cislunar-feature h1,
+  .cislunar-feature h2 { font-size: clamp(1.7rem, 7vw, 2.65rem); }
+  .cislunar-feature-art { width: 100%; max-width: 420px; justify-self: center; padding-top: 0; }
+  .cislunar-feature-art img { margin-top: -24px; }
+  .cislunar-page section { margin-bottom: 36px; }
+  .cislunar-overview { gap: 0; }
+}
+
+@media (max-width: 460px) {
+  .cislunar-feature-copy { padding: 24px 20px; }
+}
 footer > a:not(.back-to-top) { padding-top: 8px; padding-bottom: 8px; }
