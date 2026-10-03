@@ -2469,6 +2469,43 @@ footer > a:not(.back-to-top) {
 .cislunar-work-card h3 { margin: 16px 0 12px; font-size: 1.25rem; line-height: 1.35; }
 .cislunar-work-card p { line-height: 1.7; }
 
+.cislunar-presentation { margin-top: 0; }
+.cislunar-presentation .research-story-frame { grid-template-columns: minmax(0, 1fr); }
+.cislunar-presentation .research-story-copy {
+  border-right: 0;
+  border-bottom: 1px solid var(--line);
+  padding-right: 0;
+  padding-bottom: clamp(18px, 3vw, 30px);
+}
+.cislunar-presentation .research-story-copy h2 {
+  margin: 0;
+  font-size: clamp(1.65rem, 2.7vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-transform: none;
+  overflow-wrap: normal;
+}
+.cislunar-presentation-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.cislunar-presentation-links .btn { max-width: 100%; white-space: normal; text-align: left; }
+.cislunar-presentation .research-story-media { min-height: 0; align-self: center; }
+.cislunar-slide-image { display: block; }
+.cislunar-slide-image img { display: block; width: 100%; height: auto; }
+.cislunar-slide-controls:not([hidden]) { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; border-top: 1px solid var(--line); }
+.cislunar-slide-controls p { font-size: 0.9rem; }
+.cislunar-slide-controls button { width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); color: var(--link); font-size: 1.3rem; cursor: pointer; }
+.cislunar-slide-controls button:hover:not(:disabled) { background: var(--surface-strong); }
+.cislunar-slide-controls button:disabled { opacity: 0.35; cursor: default; }
+.cislunar-slide-viewer:focus-visible,
+.cislunar-slide-controls button:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.cislunar-destinations { margin: 0; }
+.cislunar-destinations > div { padding: 22px 0; border-top: 1px solid var(--line); }
+.cislunar-destinations > div:first-child { padding-top: 0; border-top: 0; }
+.cislunar-destinations dt { color: #fff; font-size: 1.15rem; font-weight: 750; }
+.cislunar-destinations dd { margin: 10px 0 0; line-height: 1.75; }
+.cislunar-assumptions > p:last-child { max-width: 95ch; line-height: 1.75; }
+.cislunar-assumptions ul { max-width: 95ch; margin: 0 0 18px; padding-left: 1.4em; line-height: 1.75; }
+.cislunar-assumptions li + li { margin-top: 8px; }
+
 .cislunar-page .cislunar-next {
   display: flex;
   align-items: center;

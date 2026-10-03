@@ -155,6 +155,51 @@ function setupResearchPanels() {
   });
 }
 
+function setupPresentationViewer() {
+  const viewer = document.querySelector("[data-presentation-viewer]");
+  if (!viewer) return;
+
+  const titles = [
+    "Our Mission: Lunar Lyft", "Contents", "Assumptions", "Trade Studies",
+    "Evaluating Propulsion: Stage 3", "Evaluating Propulsion: Stage 1",
+    "Work Breakdown Structure", "Vehicle Work Breakdown Structure",
+    "Work Breakdown Structure Requirements", "Vehicle Design", "Staging",
+    "Stage 1: Calypso", "Stage 2: Intra-space Booster System",
+    "Stage 3: Big Yellow Orbital Bus", "Lunar Habitat Design",
+    "Cislunar Orbital Live Occupancy Station and Lander",
+    "Orbital Hotel: Tranquility", "Regolith Mining Facility", "Research Facility",
+    "Thank You"
+  ];
+  const slideLink = viewer.querySelector(".cislunar-slide-image");
+  const slideImage = slideLink.querySelector("img");
+  const previous = viewer.querySelector("[data-slide-previous]");
+  const next = viewer.querySelector("[data-slide-next]");
+  const status = viewer.querySelector("[data-slide-status]");
+  let index = 0;
+
+  function showSlide(nextIndex) {
+    index = Math.max(0, Math.min(titles.length - 1, nextIndex));
+    const number = index + 1;
+    const path = `Projects/Cislunar/slides/slide-${String(number).padStart(2, "0")}.webp`;
+    slideImage.src = path;
+    slideImage.alt = `Slide ${number} of ${titles.length}: ${titles[index]}`;
+    slideLink.href = path;
+    status.textContent = `Slide ${number} of ${titles.length}`;
+    previous.disabled = index === 0;
+    next.disabled = index === titles.length - 1;
+  }
+
+  previous.addEventListener("click", () => showSlide(index - 1));
+  next.addEventListener("click", () => showSlide(index + 1));
+  viewer.addEventListener("keydown", event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    showSlide(index + (event.key === "ArrowRight" ? 1 : -1));
+  });
+  viewer.querySelector(".cislunar-slide-controls").hidden = false;
+}
+
 function toggleAwards() {
   const fullList = document.getElementById("full-awards");
   const btn = document.querySelector(".expand-awards-btn");
@@ -238,6 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupPortfolioNotifications();
   setupMouseScrolling();
   setupResearchPanels();
+  setupPresentationViewer();
 
   document.querySelectorAll(".project-block, .milestones-card").forEach((sliderRoot, index) => {
     if (!sliderRoot.querySelector(".slides")) return;
