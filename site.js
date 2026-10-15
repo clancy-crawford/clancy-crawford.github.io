@@ -160,14 +160,15 @@ function setupPresentationViewer() {
   if (!viewer) return;
 
   const titles = [
-    "Our Mission: Lunar Lyft", "Contents", "Assumptions", "Trade Studies",
-    "Evaluating Propulsion: Stage 3", "Evaluating Propulsion: Stage 1",
-    "Work Breakdown Structure", "Vehicle Work Breakdown Structure",
-    "Work Breakdown Structure Requirements", "Vehicle Design", "Staging",
-    "Stage 1: Calypso", "Stage 2: Intra-space Booster System",
-    "Stage 3: Big Yellow Orbital Bus", "Lunar Habitat Design",
-    "Cislunar Orbital Live Occupancy Station and Lander",
-    "Orbital Hotel: Tranquility", "Regolith Mining Facility", "Research Facility",
+    "Lunar Lyft: Conceptual Design Presentation", "Problem Statement and Design Summary",
+    "Assumptions", "Concept of Operations", "Launch Vehicle Concept",
+    "Stage 1 and 2 Engines", "Stage 1 Fuel", "Stage 2 Trajectory",
+    "Stage 2 Fuel", "Stage 3 Fuel", "Stage 3 Trajectory", "Lunar Base Location",
+    "Vehicle for Lunar Surface to Tranquility: Trade Study",
+    "Vehicle for Lunar Surface to Tranquility: Tether Concepts",
+    "Surface-Anchored Lunar Elevator", "Stage 3 Re-entry and Return Trajectory Methods",
+    "Work Breakdown Structure and Mission Requirements",
+    "Performance Analysis for Stages 1 Through 3", "Stage 3 Payload Mass Using NASA Data",
     "Thank You"
   ];
   const slideLink = viewer.querySelector(".cislunar-slide-image");
@@ -180,7 +181,7 @@ function setupPresentationViewer() {
   function showSlide(nextIndex) {
     index = Math.max(0, Math.min(titles.length - 1, nextIndex));
     const number = index + 1;
-    const path = `Projects/Cislunar/slides/slide-${String(number).padStart(2, "0")}.webp`;
+    const path = `Projects/Cislunar/cdr-slides/slide-${String(number).padStart(2, "0")}.webp`;
     slideImage.src = path;
     slideImage.alt = `Slide ${number} of ${titles.length}: ${titles[index]}`;
     slideLink.href = path;
