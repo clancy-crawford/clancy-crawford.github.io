@@ -2469,6 +2469,9 @@ footer > a:not(.back-to-top) {
 .cislunar-work-card h3 { margin: 16px 0 12px; font-size: 1.25rem; line-height: 1.35; }
 .cislunar-work-card p { line-height: 1.7; }
 
+.cislunar-deliverables-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cislunar-deliverables-grid .cislunar-presentation-links { margin-top: 22px; }
+
 .cislunar-presentation { margin-top: 0; }
 .cislunar-presentation .research-story-frame { grid-template-columns: minmax(0, 1fr); }
 .cislunar-presentation .research-story-copy {
